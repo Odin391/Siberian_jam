@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://clt0tee07srb7"]
+[gd_scene format=3 uid="uid://bw13kv48qxjgy"]
 
 [ext_resource type="Script" uid="uid://dii6qcltrsvw7" path="res://Scripts.Deni/Gamer.gd" id="1_vxk36"]
 [ext_resource type="Texture2D" uid="uid://cc0xbecbnum4o" path="res://Art/Untitled 04-30-2026 11-35-59.png" id="2_3s3d0"]

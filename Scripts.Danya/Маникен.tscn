@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://keakkn7clcxc" path="res://Art/LandSkape1.png" id="1_cxnf7"]
 [ext_resource type="Script" uid="uid://bam8otaqex27v" path="res://Scripts.Danya/character_body_2d.gd" id="2_cxnf7"]
 [ext_resource type="Texture2D" uid="uid://c41k4vu3mplto" path="res://Art/основная дивка.png" id="2_oj6dt"]
+[ext_resource type="Script" uid="uid://dlkif0heycrjw" path="res://area_2d.gd" id="5_t3fc5"]
+[ext_resource type="Script" uid="uid://dlpsq4wgaww5a" path="res://Scripts.Danya/area_2d_2.gd" id="6_6na3a"]
+[ext_resource type="Texture2D" uid="uid://cc0xbecbnum4o" path="res://Art/Untitled 04-30-2026 11-35-59.png" id="6_i32l6"]
+[ext_resource type="Script" uid="uid://cnpli85qew3fd" path="res://Scripts.Danya/ui.gd" id="6_t3fc5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6na3a"]
 texture = ExtResource("1_cxnf7")
@@ -181,7 +185,16 @@ texture_region_size = Vector2i(38, 38)
 tile_size = Vector2i(38, 38)
 sources/1 = SubResource("TileSetAtlasSource_6na3a")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oj6dt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4i0"]
+size = Vector2(149.60864, 374.5368)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoach"]
+size = Vector2(15, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6na3a"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(29.5, 42)
 
 [node name="Node2D" type="Node2D" unique_id=631785596]
 
@@ -200,4 +213,56 @@ scale = Vector2(1.0000001, 1)
 texture = ExtResource("2_oj6dt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1351689842]
-shape = SubResource("WorldBoundaryShape2D_oj6dt")
+position = Vector2(-63.458405, 11.349602)
+scale = Vector2(1.0000004, 1)
+shape = SubResource("RectangleShape2D_1l4i0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=788379463]
+position = Vector2(-1, 0)
+script = ExtResource("5_t3fc5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=313634456]
+position = Vector2(58, 91)
+shape = SubResource("RectangleShape2D_yoach")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=2004610132]
+position = Vector2(58, 91)
+scale = Vector2(0.5673128, 0.4019273)
+texture = ExtResource("6_i32l6")
+region_enabled = true
+region_rect = Rect2(800, 32, 24, 80)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Area2D" unique_id=2131278281]
+position = Vector2(58, 89)
+
+[node name="Camera2D" type="Camera2D" parent="Area2D" unique_id=1498520741]
+position = Vector2(60, 92)
+zoom = Vector2(1.65, 1.65)
+
+[node name="UI" type="CanvasLayer" parent="Area2D" unique_id=1164877526]
+script = ExtResource("6_t3fc5")
+
+[node name="HPLabel" type="Label" parent="Area2D/UI" unique_id=1403536766]
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.083000004
+anchor_right = 0.039
+anchor_bottom = 0.083000004
+offset_left = 482.12
+offset_top = 280.36
+offset_right = 564.12
+offset_bottom = 330.36
+theme_override_font_sizes/font_size = 30
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=202061916]
+position = Vector2(-2, 0)
+script = ExtResource("6_6na3a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2" unique_id=1349296315]
+position = Vector2(176.00002, 137)
+scale = Vector2(0.124407634, 0.10959891)
+texture = ExtResource("2_oj6dt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=361087158]
+position = Vector2(173, 137)
+shape = SubResource("RectangleShape2D_6na3a")
