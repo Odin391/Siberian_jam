@@ -6,7 +6,7 @@ var damage = 10
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("new_animation")
-
+# пускаем как торпеду, после первого нажатия одно из in_action ложно и больше нельзя перенаправить
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("LMB") and in_action == false:
 		in_action = true
@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		apply_force(direction * 4000)
 
 var smaller = false
-
+# по таймеру времени полета уменьшаем урон и scale (размер)
 func _on_timer_timeout() -> void:
 
 	damage -= 2
