@@ -4,18 +4,25 @@ var in_action = false
 var damage = 10
 @onready var timer = get_node("Timer")
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("new_animation")
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("LMB") and in_action == false:
 		in_action = true
+		look_at(get_global_mouse_position())
 		var target = get_global_mouse_position()
 		var direction = (target - position).normalized()
-		apply_force(direction * 3000)
+		apply_force(direction * 4000)
 
-
+var smaller = false
 
 func _on_timer_timeout() -> void:
+
 	damage -= 2
-	var tween = create_tween()
-	tween.tween_property(self, "scale", scale * 0.8, 1)
+	if scale >= Vector2(0, 0) and smaller == false:
+		var tween = create_tween()
+		tween.tween_property(self, "scale", scale * 0.1, 5)
 	if damage <= 0:
 		queue_free()
+	smaller = true
