@@ -961,3 +961,4 @@ region_rect = Rect2(800, 32, 24, 80)
 [node name="AudioListener2D" type="AudioListener2D" parent="Gamer" unique_id=798352936]
 
 [node name="Camera2D" type="Camera2D" parent="Gamer" unique_id=1493643196]
+zoom = Vector2(1.65, 1.65)
