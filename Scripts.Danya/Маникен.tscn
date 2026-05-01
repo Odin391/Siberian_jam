@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://bam8otaqex27v" path="res://Scripts.Danya/character_body_2d.gd" id="2_cxnf7"]
 [ext_resource type="Texture2D" uid="uid://c41k4vu3mplto" path="res://Art/основная дивка.png" id="2_oj6dt"]
 [ext_resource type="Script" uid="uid://dlkif0heycrjw" path="res://area_2d.gd" id="5_t3fc5"]
-[ext_resource type="Script" uid="uid://dlpsq4wgaww5a" path="res://Scripts.Danya/area_2d_2.gd" id="6_6na3a"]
 [ext_resource type="Texture2D" uid="uid://cc0xbecbnum4o" path="res://Art/Untitled 04-30-2026 11-35-59.png" id="6_i32l6"]
 [ext_resource type="Script" uid="uid://cnpli85qew3fd" path="res://Scripts.Danya/ui.gd" id="6_t3fc5"]
 
@@ -191,11 +190,6 @@ size = Vector2(149.60864, 374.5368)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yoach"]
 size = Vector2(15, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6na3a"]
-resource_local_to_scene = true
-custom_solver_bias = 1.0
-size = Vector2(29.5, 42)
-
 [node name="Node2D" type="Node2D" unique_id=631785596]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=163538575]
@@ -253,16 +247,3 @@ offset_top = 280.36
 offset_right = 564.12
 offset_bottom = 330.36
 theme_override_font_sizes/font_size = 30
-
-[node name="Area2D2" type="Area2D" parent="." unique_id=202061916]
-position = Vector2(-2, 0)
-script = ExtResource("6_6na3a")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2" unique_id=1349296315]
-position = Vector2(176.00002, 137)
-scale = Vector2(0.124407634, 0.10959891)
-texture = ExtResource("2_oj6dt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=361087158]
-position = Vector2(173, 137)
-shape = SubResource("RectangleShape2D_6na3a")
