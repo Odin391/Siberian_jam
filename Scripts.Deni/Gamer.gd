@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 var speed = 40
 
+
+
+
 func _process(delta: float) -> void:
 	velocity.y = Input.get_axis("W", "S") * speed
 	velocity.x = Input.get_axis("A", "D") * speed
