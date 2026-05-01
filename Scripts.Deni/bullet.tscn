@@ -173,20 +173,25 @@ animations = [{
 "speed": 16.0
 }]
 
-[node name="Bullet" type="RigidBody2D" unique_id=1350822934]
-mass = 0.001
+[node name="Bullet" type="RigidBody2D" unique_id=1334430458]
+collision_layer = 0
+collision_mask = 0
+mass = 0.5
 gravity_scale = 0.0
 script = ExtResource("1_vb2dv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671751340]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=248163395]
 position = Vector2(27, -1)
 shape = SubResource("CircleShape2D_582am")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1947775647]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=848912241]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1220954578]
 position = Vector2(16.25, -4.0000014)
 scale = Vector2(0.040625, 0.0475)
 sprite_frames = SubResource("SpriteFrames_sf10s")
 animation = &"new_animation"
 frame_progress = 0.80475026
+
+[node name="Timer" type="Timer" parent="." unique_id=227193589]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

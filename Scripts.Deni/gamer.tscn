@@ -6,24 +6,23 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_582am"]
 size = Vector2(15, 32)
 
-[node name="Gamer" type="CharacterBody2D" unique_id=1960729958]
-collision_mask = 3
+[node name="Gamer" type="CharacterBody2D" unique_id=2082965673]
 motion_mode = 1
 platform_wall_layers = 3
 script = ExtResource("1_vxk36")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1843235983]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067846680]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_582am")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=869827553]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=238337872]
 position = Vector2(-0.99999994, 4.7683716e-07)
 scale = Vector2(0.5673128, 0.4019273)
 texture = ExtResource("2_3s3d0")
 region_enabled = true
 region_rect = Rect2(800, 32, 24, 80)
 
-[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=542312032]
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=131057594]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1848369470]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=331978738]
 zoom = Vector2(1.65, 1.65)
