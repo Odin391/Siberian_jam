@@ -1,9 +1,21 @@
 [gd_scene format=3 uid="uid://cdsaxow1ueisx"]
 
+[ext_resource type="Script" uid="uid://bd66emksjf86r" path="res://Scripts.Danya/control.gd" id="1_xdkfu"]
+[ext_resource type="AudioStream" uid="uid://cmaacacfpbvy8" path="res://Art/Sonic RPG eps.10 OST — Main menu theme (www.lightaudio.ru).mp3" id="2_50uwg"]
+[ext_resource type="Script" uid="uid://c0ited7lw6pjo" path="res://Scripts.Danya/audio_control.gd" id="2_vxqqc"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asd8i"]
 bg_color = Color(0, 0.6703609, 0.7892392, 1)
 shadow_size = 10
 anti_aliasing_size = 10.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_50uwg"]
+color = Color(0.47651076, 0.5584674, 0.51219535, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_vxqqc"]
+color = Color(0.1165951, 0.48845243, 9.62615e-08, 1)
+thickness = 4
 
 [node name="Control" type="Control" unique_id=1326388145]
 layout_mode = 3
@@ -12,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xdkfu")
 
 [node name="Panel" type="Panel" parent="." unique_id=536980093]
 layout_mode = 1
@@ -53,3 +66,53 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_asd8i")
 text = "Exist"
+
+[node name="Panel2" type="Panel" parent="." unique_id=1795944503]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 14.0
+offset_right = 1138.0
+offset_bottom = 404.0
+
+[node name="Button" type="Button" parent="Panel2" unique_id=1889638454]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 332.0
+offset_right = 471.0
+offset_bottom = 382.0
+text = "Back"
+
+[node name="Label" type="Label" parent="Panel2" unique_id=1145212141]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_right = 38.0
+offset_bottom = 42.0
+grow_horizontal = 2
+text = "OPTIONS"
+
+[node name="AudioControl" type="HSlider" parent="Panel2" unique_id=749813349]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 37.0
+offset_right = 319.0
+offset_bottom = 113.0
+theme_override_styles/slider = SubResource("StyleBoxLine_50uwg")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_vxqqc")
+min_value = -80.0
+max_value = 0.0
+script = ExtResource("2_vxqqc")
+audio_bus_name = "Music"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2102736679]
+stream = ExtResource("2_50uwg")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Panel2/Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="Panel2/AudioControl" to="Panel2/AudioControl" method="_on_value_changed"]
