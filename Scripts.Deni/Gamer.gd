@@ -32,4 +32,3 @@ func _spawn():
 	var bullet = koffeBall.instantiate()
 	bullet.position = self.global_position
 	get_parent().add_child(bullet)
-
