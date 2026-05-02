@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://bej3vd8hk8drm"]
 
 [ext_resource type="Texture2D" uid="uid://keakkn7clcxc" path="res://Art/LandSkape1.png" id="1_q2xui"]
-[ext_resource type="PackedScene" uid="uid://bw13kv48qxjgy" path="res://Scripts.Deni/gamer.tscn" id="2_sagh3"
-[ext_resource type="Script" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
-[ext_resource type="Script" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
+[ext_resource type="PackedScene" uid="uid://bw13kv48qxjgy" path="res://Scripts.Deni/gamer.tscn" id="2_sagh3"]
+[ext_resource type="Script" uid="uid://dpavv06basctv" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
+[ext_resource type="Script" uid="uid://bak44ofgf72ao" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2xui"]
 texture = ExtResource("1_q2xui")
 margins = Vector2i(1, 2)
@@ -1107,6 +1108,7 @@ texture_region_size = Vector2i(38, 38)
 [sub_resource type="TileSet" id="TileSet_582am"]
 tile_size = Vector2i(38, 38)
 sources/0 = SubResource("TileSetAtlasSource_3wsip")
+
 [node name="Node2D" type="Node2D" unique_id=1098396671]
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=702380585]
