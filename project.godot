@@ -18,8 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalInfo="*uid://cet3rhht3n4je"
-Node2="*uid://bpuf27segbokf"
-InventoryManager="*uid://driflkur2rdig"
 
 [display]
 
