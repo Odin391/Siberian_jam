@@ -29,7 +29,7 @@ func _ready():
 	
 	# Настройка расстояния слышимости
 	audio_player.max_distance = 250.0       # на каком расстоянии звук пропадает (в пикселях)
-	audio_player.attenuation = 0.5          # сила затухания (чем больше, тем быстрее тише)
+	audio_player.attenuation = 2.5          # сила затухания (чем больше, тем быстрее тише)
 	
 	add_child(audio_player)
 	
