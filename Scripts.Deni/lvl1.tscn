@@ -9,11 +9,7 @@
 [ext_resource type="Script" uid="uid://bam8otaqex27v" path="res://Scripts.Danya/character_body_2d.gd" id="5_pr0hy"]
 [ext_resource type="Script" uid="uid://cns7miixp5kd3" path="res://Scripts.Deni/корова.gd" id="5_r84sp"]
 [ext_resource type="Texture2D" uid="uid://byc1ai7m1e8hf" path="res://Art/корова.png" id="6_k1m2l"]
-[ext_resource type="Script" uid="uid://dq2xs3iqnxbyx" path="res://Scripts.Deni/корова_2.gd" id="7_kpxtb"]
-[ext_resource type="Script" uid="uid://b0aykay8hkp77" path="res://Scripts.Deni/корова_3.gd" id="8_h742x"]
 [ext_resource type="Texture2D" uid="uid://d25hijf6jpib7" path="res://Art/заяц.png" id="9_u2fmc"]
-[ext_resource type="Script" uid="uid://r5aycsqagb50" path="res://Scripts.Deni/заяц_2.gd" id="10_r84sp"]
-[ext_resource type="Script" uid="uid://bkinhu6miffe0" path="res://Scripts.Deni/заяц_3.gd" id="11_f80oy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2xui"]
 texture = ExtResource("1_q2xui")
