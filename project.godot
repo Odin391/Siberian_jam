@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalNode="*uid://m8wusje8knv6"
-InventoryManager="*uid://driflkur2rdig"
 GlobalInfo="*uid://cet3rhht3n4je"
+Node2="*uid://bpuf27segbokf"
+InventoryManager="*uid://driflkur2rdig"
 
 [display]
 
