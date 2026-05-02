@@ -14,8 +14,9 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LMB"):
-		GlobalInfo.mana_value -= 20
-		_spawn()
+		if GlobalInfo.mana_value != 0:
+			_spawn()
+			GlobalInfo.mana_value -= 20
 
 
 
@@ -23,7 +24,6 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	
 	
-	print(GlobalInfo.stamina_value)
 	if GlobalInfo.stamina_value != 0.0:
 		velocity.y = Input.get_axis("W", "S") * speed
 		velocity.x = Input.get_axis("A", "D") * speed
@@ -42,9 +42,18 @@ func _process(delta: float) -> void:
 	else:
 		GlobalInfo.in_shift = false
 	
+	if velocity == Vector2.ZERO:
+		$Sprite2D.play("idle")
+	elif velocity.y > 0:
+		$Sprite2D.play("go_forward")
+	elif velocity.y < 0:
+		$Sprite2D.play("go_back")
+	elif velocity <= Vector2(-1, -1) or velocity <= Vector2(-1, 1):
+		$Sprite2D.play("go_left")
+	elif velocity.x > 0:
+		$Sprite2D.play("go_right")
 	
-	
-	
+	print(velocity)
 	move_and_slide()
 
 
