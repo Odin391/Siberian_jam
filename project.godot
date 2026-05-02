@@ -17,7 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalInfo="*uid://cet3rhht3n4je"
+"ПИСЮНДРА"="*uid://bbusbpy3awm22"
+GlobalInfo="*uid://bltbxf1yygeo2"
+InventoryManager="*uid://cxhsbol6pgb82"
 
 [display]
 

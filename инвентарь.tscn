@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dygprtrkyxvwu"]
 
 [ext_resource type="Texture2D" uid="uid://keakkn7clcxc" path="res://Art/LandSkape1.png" id="1_cymth"]
-[ext_resource type="Script" uid="uid://d0f6d7cjnyd8l" path="res://инвентарь.gd" id="1_yndvx"]
+[ext_resource type="Script" path="res://инвентарь.gd" id="1_yndvx"]
 [ext_resource type="Texture2D" uid="uid://cc0xbecbnum4o" path="res://Art/Untitled 04-30-2026 11-35-59.png" id="3_k3abx"]
 [ext_resource type="Script" uid="uid://cclqpiim3l6j3" path="res://Scripts.Deni/bullet.gd" id="4_2y3j7"]
 [ext_resource type="Texture2D" uid="uid://es6dwgx3jwug" path="res://animations/fireballs/fireball_high_speed_side_small/imgs/img_0.png" id="5_yndvx"]
@@ -43,7 +43,6 @@
 [ext_resource type="Texture2D" uid="uid://cdv5ua1qj2jgc" path="res://animations/fireballs/fireball_high_speed_side_small/imgs/img_38.png" id="41_5xu3t"]
 [ext_resource type="Texture2D" uid="uid://e7tfva5q7gcn" path="res://animations/fireballs/fireball_high_speed_side_small/imgs/img_39.png" id="42_p4iqs"]
 [ext_resource type="PackedScene" uid="uid://bfgb2qj5hvihh" path="res://area_2d_2.tscn" id="44_2y3j7"]
-[ext_resource type="Script" uid="uid://bx5x85s01f8m2" path="res://inventory_manager.gd" id="45_f3y15"]
 [ext_resource type="Script" uid="uid://sj00hbs43jmk" path="res://control.gd" id="45_fc0fa"]
 [ext_resource type="Script" uid="uid://dlkif0heycrjw" path="res://area_2d.gd" id="45_yndvx"]
 
@@ -1109,6 +1108,58 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_2y3j7"]
+script/source = "extends Node
+
+var items = []           # {\"name\": str, \"icon\": Texture2D, \"quantity\": int}
+var inventory_ui = null
+var player = null
+var pickup_scene = null
+
+func _ready():
+	pickup_scene = preload(\"res://Scripts.Danya/area_2d_2.tscn\")
+	player = get_tree().get_first_node_in_group(\"player\")
+
+func add_item(name, icon):
+	for i in range(items.size()):
+		if items[i][\"name\"] == name and items[i][\"icon\"] == icon:
+			items[i][\"quantity\"] += 1
+			if inventory_ui: inventory_ui.refresh()
+			return
+	items.append({\"name\": name, \"icon\": icon, \"quantity\": 1})
+	if inventory_ui: inventory_ui.refresh()
+
+# Выбрасываем предмет рядом с игроком
+func drop_item(index: int):
+	if index < 0 or index >= items.size():
+		return
+	if pickup_scene == null or player == null:
+		print(\"Ошибка: нет сцены предмета или игрока\")
+		return
+	
+	var item = items[index]
+	var item_name = item[\"name\"]
+	var item_icon = item[\"icon\"]
+	
+	if item[\"quantity\"] > 1:
+		item[\"quantity\"] -= 1
+	else:
+		items.remove_at(index)
+	
+	if inventory_ui:
+		inventory_ui.refresh()
+	
+	# Спавним предмет рядом с игроком (чуть правее)
+	var pickup = pickup_scene.instantiate()
+	pickup.item_name = item_name
+	pickup.item_icon = item_icon
+	# Позиция: чуть правее от центра игрока (можно подобрать под свою коллизию)
+	var offset = Vector2(50, 0)   # смещение вправо
+	pickup.global_position = player.global_position + offset
+	get_tree().root.add_child(pickup)
+	print(\"🎯 Выброшен предмет \", item_name, \" рядом с игроком\")
+"
+
 [node name="Node2D" type="Node2D" unique_id=237406778]
 script = ExtResource("1_yndvx")
 
@@ -1189,4 +1240,4 @@ animation = &"new_animation"
 [node name="Area2D2" parent="." unique_id=1712433626 instance=ExtResource("44_2y3j7")]
 
 [node name="InventoryManager" type="Node" parent="." unique_id=1291030707]
-script = ExtResource("45_f3y15")
+script = SubResource("GDScript_2y3j7")
