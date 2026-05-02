@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ynt72a4xfq0l"]
+
+[ext_resource type="Script" uid="uid://by6g17755ejyq" path="res://area_2d_2.gd" id="1_wknpg"]
+[ext_resource type="Texture2D" uid="uid://cc0xbecbnum4o" path="res://Art/Untitled 04-30-2026 11-35-59.png" id="2_0fplh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg5wv"]
+size = Vector2(30, 22)
+
+[node name="Area2D2" type="Area2D" unique_id=1582307877]
+script = ExtResource("1_wknpg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469034112]
+position = Vector2(27, 213)
+shape = SubResource("RectangleShape2D_qg5wv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1011569008]
+position = Vector2(31, 226.00003)
+scale = Vector2(0.03515625, 0.055664066)
+texture = ExtResource("2_0fplh")

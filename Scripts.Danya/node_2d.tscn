@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://basxw0jbungal"]
+
+[ext_resource type="PackedScene" uid="uid://ynt72a4xfq0l" path="res://Scripts.Danya/area_2d_2.tscn" id="1_t2vf2"]
+
+[node name="Node2D" type="Node2D" unique_id=1556168174]
+
+[node name="Area2D2" parent="." unique_id=1582307877 instance=ExtResource("1_t2vf2")]

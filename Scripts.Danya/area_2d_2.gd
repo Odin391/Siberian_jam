@@ -1,48 +1,42 @@
 extends Area2D
 
-@export var speed: float = 80.0
-@export var damage: int = 2
-@export var attack_cooldown: float = 1.0
-@export var attack_range: float = 0.5   # дистанция, на которой атакует (в ваших единицах)
+@export var speed : float = 20.0          # скорость (пикселей/сек)
+@export var attack_cooldown : float = 0.5  # задержка между атаками
 
-var player = false
-var can_attack = true
-var attack_timer = 4.0
-
-@onready var sprite = $Sprite2D
+var target : Node2D = null
+var can_attack : bool = true
+var attack_timer : float = 0.0
 
 func _ready():
-	player = get_tree().get_first_node_in_group("player")
-	if not player:
-		print("Кабан: игрок не найден")
+	target = get_tree().get_first_node_in_group("player")
+	if target == null:
+		print("Ошибка: группа 'player' не найдена")
+	body_entered.connect(_on_body_entered)
 
-func _physics_process(delta):
-	if not player:
+func _process(delta):
+	if target == null:
 		return
 	
-	# 1. Движение к игроку
-	var direction = (player.global_position - global_position).normalized()
+	# Вектор направления к игроку (нормализованный)
+	var direction = (target.global_position - global_position).normalized()
+	# ДВИЖЕНИЕ ВПЛОТНУЮ БЕЗ ОСТАНОВКИ
 	position += direction * speed * delta
 	
-	# Поворот спрайта
-	if direction.x != 0:
-		sprite.scale.x = abs(sprite.scale.x) if direction.x > 0 else -abs(sprite.scale.x)
+	# Поворот спрайта (опционально)
+	if direction.x != 0 and has_node("Sprite2D"):
+		$Sprite2D.flip_h = direction.x < 0
 	
-	# 2. Расстояние до игрока
-	var distance = global_position.distance_to(player.global_position)
-	
-	# 3. Атака только если очень близко и можно атаковать
-	if distance <= attack_range and can_attack:
-		can_attack = false
-		attack_timer = 0.0
-		if player.has_method("take_damage"):
-			player.take_damage(damage)
-			print("⚔️ КАБАН АТАКУЕТ! Урон ", damage, ", HP игрока: ", player.hp)
-		else:
-			print("Ошибка: у игрока нет метода take_damage")
-	
-	# 4. Таймер перезарядки атаки
+	# Перезарядка атаки
 	if not can_attack:
 		attack_timer += delta
 		if attack_timer >= attack_cooldown:
 			can_attack = true
+			attack_timer = 0.0
+
+func _on_body_entered(body):
+	# Когда кабан ВПЛОТНУЮ столкнулся с игроком
+	if body == target and can_attack:
+		can_attack = false
+		print("Кабан врезался и атакует!")
+		if body.has_method("take_damage"):
+			body.take_damage(1)
