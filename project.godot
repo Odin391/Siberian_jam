@@ -18,7 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Inventory="*uid://celqv8dpqp4ml"
-GlobalInfo="*uid://cn6x8i8mgigm6"
+GlobalInfo="*uid://cet3rhht3n4je"
+GlobalNode="*uid://bgxgyge7ybjlb"
 InventoryManager="*uid://driflkur2rdig"
 GlobalNode="*uid://bgxgyge7ybjlb"
 

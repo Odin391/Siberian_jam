@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bmrkgvneiylk0" path="res://Scripts.Deni/Player_anim.gd" id="3_3s3d0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_582am"]
-size = Vector2(8.04974, 7.8555365)
+size = Vector2(8.944155, 5.7833056)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3s3d0"]
 atlas = ExtResource("2_vxk36")
@@ -149,7 +149,7 @@ platform_wall_layers = 3
 script = ExtResource("1_vxk36")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067846680]
-position = Vector2(-1.4999998, 11.925062)
+position = Vector2(-2.9802322e-08, 13)
 scale = Vector2(1.1180485, 1.037469)
 shape = SubResource("RectangleShape2D_582am")
 
@@ -157,8 +157,8 @@ shape = SubResource("RectangleShape2D_582am")
 position = Vector2(0, 2.842171e-14)
 scale = Vector2(0.5673128, 0.4019273)
 sprite_frames = SubResource("SpriteFrames_f5tx5")
-animation = &"go_back"
-frame_progress = 0.37136608
+animation = &"go_right"
+frame_progress = 0.44343752
 script = ExtResource("3_3s3d0")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=131057594]
