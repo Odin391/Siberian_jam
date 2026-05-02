@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GlobalNode="*uid://bgxgyge7ybjlb"
 Inventory="*uid://celqv8dpqp4ml"
 GlobalInfo="*uid://cn6x8i8mgigm6"
+InventoryManager="*uid://bx5x85s01f8m2"
 
 [display]
 
