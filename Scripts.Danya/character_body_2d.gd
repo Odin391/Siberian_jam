@@ -5,19 +5,19 @@ extends CharacterBody2D
 @export var pause_seconds: float = 4.0
 
 @export var waypoints_tile: Array[Vector2] = [
-	Vector2(6, 7),
-	Vector2(17, 6),
-	Vector2(14, 14),
-	Vector2(18, 15),
-	Vector2(13, 9)
+	Vector2(14, 6),
+	Vector2(14, 10),
+	Vector2(14, 1),
+	Vector2(4, 4),
+	Vector2(4, 10)
 ]
 
 var target_position: Vector2
 var is_waiting: bool = false
 var audio_player: AudioStreamPlayer2D
-var moo_sound = preload("res://Art/the-wounded-hare-screams (online-audio-converter.com).mp3")
+var moo_sound = preload("res://Art/deti-online.com_-_balerina-kapuchino-tralalelo-tralala.mp3")
 
-var last_index: int = -1   # индекс последней выбранной точки
+var last_index: int = -1
 
 func _ready():
 	if waypoints_tile.is_empty():
@@ -26,14 +26,20 @@ func _ready():
 	
 	audio_player = AudioStreamPlayer2D.new()
 	audio_player.stream = moo_sound
+	audio_player.max_distance = 150.0
+	audio_player.attenuation = 1.5
 	
-	# Настройка расстояния слышимости
-	audio_player.max_distance = 150.0       # на каком расстоянии звук пропадает (в пикселях)
-	audio_player.attenuation = 1.5          # сила затухания (чем больше, тем быстрее тише)
-	
+	# Подключаем сигнал для бесконечного повтора
+	audio_player.finished.connect(_on_audio_finished)
 	add_child(audio_player)
 	
+	# Запускаем звук
+	audio_player.play()
+	
 	_pick_random_target()
+
+func _on_audio_finished():
+	audio_player.play()   # перезапускаем, если не зациклено
 
 func _physics_process(delta):
 	if waypoints_tile.is_empty() or is_waiting:
@@ -46,7 +52,8 @@ func _physics_process(delta):
 	if global_position.distance_to(target_position) < 10.0:
 		is_waiting = true
 		velocity = Vector2.ZERO
-		audio_player.play()
+		# (опционально) если нужен дополнительный звук при остановке, можно раскомментировать:
+		# audio_player.play()
 		
 		await get_tree().create_timer(pause_seconds).timeout
 		_pick_random_target()
@@ -57,7 +64,6 @@ func _pick_random_target():
 	if size == 0:
 		return
 	if size == 1:
-		# если всего одна точка, вынуждены её же и выбирать
 		var tile_coord = waypoints_tile[0]
 		target_position = Vector2(
 			tile_coord.x * tile_size.x + tile_size.x / 2,
@@ -66,7 +72,6 @@ func _pick_random_target():
 		last_index = 0
 		return
 	
-	# Формируем список индексов, исключая last_index
 	var available_indices = []
 	for i in range(size):
 		if i != last_index:
