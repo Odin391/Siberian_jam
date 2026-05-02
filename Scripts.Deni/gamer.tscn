@@ -26,4 +26,4 @@ region_rect = Rect2(800, 32, 24, 80)
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=131057594]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=331978738]
-zoom = Vector2(1.65, 1.65)
+zoom = Vector2(2.825, 2.825)

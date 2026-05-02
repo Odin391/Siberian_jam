@@ -170,7 +170,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"new_animation",
-"speed": 16.0
+"speed": 18.0
 }]
 
 [node name="Bullet" type="RigidBody2D" unique_id=1334430458]
@@ -189,7 +189,7 @@ position = Vector2(16.25, -4.0000014)
 scale = Vector2(0.040625, 0.0475)
 sprite_frames = SubResource("SpriteFrames_sf10s")
 animation = &"new_animation"
-frame_progress = 0.80475026
+frame_progress = 0.7284299
 
 [node name="Timer" type="Timer" parent="." unique_id=227193589]
 autostart = true
