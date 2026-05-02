@@ -17,6 +17,3 @@ func _unhandled_input(event):
 		var mouse_screen = get_viewport().get_mouse_position()
 		# Преобразуем в мировые координаты с учётом зума и позиции камеры
 		var world_mouse = camera.global_position + (mouse_screen - get_viewport().get_visible_rect().size / 2) * camera.zoom
-		
-		print("Клик в мире: ", world_mouse)
-		InventoryManager.drop_selected_at_position(world_mouse)
