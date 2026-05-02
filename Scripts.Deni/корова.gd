@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 70.0
+@export var speed: float = 40.0
 @export var tile_size: Vector2 = Vector2(38, 38)
 @export var pause_seconds: float = 4.0
 
