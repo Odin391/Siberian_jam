@@ -7,15 +7,15 @@ extends CharacterBody2D
 @export var waypoints_tile: Array[Vector2] = [
 	Vector2(4, 13),
 	Vector2(1, 8),
-	Vector2(0, 24),
-	Vector2(7, 19),
-	Vector2(11, 9)
+	Vector2(0, 25),
+	Vector2(8, 19),
+	Vector2(14, 10)
 ]
 
 var target_position: Vector2
 var is_waiting: bool = false
 var audio_player: AudioStreamPlayer2D
-var moo_sound = preload("res://Art/the-wounded-hare-screams (online-audio-converter.com).mp3")
+var moo_sound = preload("res://Art/sounds-animals-cow-1.mp3")
 
 var last_index: int = -1   # индекс последней выбранной точки
 
@@ -29,7 +29,7 @@ func _ready():
 	
 	# Настройка расстояния слышимости
 	audio_player.max_distance = 250.0       # на каком расстоянии звук пропадает (в пикселях)
-	audio_player.attenuation = 2.5          # сила затухания (чем больше, тем быстрее тише)
+	audio_player.attenuation = 0.5          # сила затухания (чем больше, тем быстрее тише)
 	
 	add_child(audio_player)
 	

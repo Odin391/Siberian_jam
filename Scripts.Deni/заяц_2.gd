@@ -5,11 +5,11 @@ extends CharacterBody2D
 @export var pause_seconds: float = 4.0
 
 @export var waypoints_tile: Array[Vector2] = [
-	Vector2(4, 13),
-	Vector2(1, 8),
-	Vector2(0, 24),
-	Vector2(7, 19),
-	Vector2(11, 9)
+	Vector2(36, 6),
+	Vector2(42, 12),
+	Vector2(31, 15),
+	Vector2(34, 1),
+	Vector2(26, 7)
 ]
 
 var target_position: Vector2
