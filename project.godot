@@ -17,11 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Inventory="*uid://celqv8dpqp4ml"
-GlobalInfo="*uid://cet3rhht3n4je"
-GlobalNode="*uid://bgxgyge7ybjlb"
+GlobalNode="*uid://m8wusje8knv6"
 InventoryManager="*uid://driflkur2rdig"
-GlobalNode="*uid://bgxgyge7ybjlb"
+GlobalInfo="*uid://cet3rhht3n4je"
 
 [display]
 
