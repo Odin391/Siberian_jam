@@ -2,8 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://keakkn7clcxc" path="res://Art/LandSkape1.png" id="1_q2xui"]
 [ext_resource type="PackedScene" uid="uid://bw13kv48qxjgy" path="res://Scripts.Deni/gamer.tscn" id="2_sagh3"]
-[ext_resource type="Script" uid="uid://dpavv06basctv" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
-[ext_resource type="Script" uid="uid://bak44ofgf72ao" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
+[ext_resource type="Script" uid="uid://ye6muaq6xfpu" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
+[ext_resource type="Script" uid="uid://bwv3w77csv5rj" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
+[ext_resource type="Script" uid="uid://bam8otaqex27v" path="res://Scripts.Danya/character_body_2d.gd" id="5_pr0hy"]
+[ext_resource type="Script" uid="uid://cns7miixp5kd3" path="res://Scripts.Deni/корова.gd" id="5_r84sp"]
+[ext_resource type="Texture2D" uid="uid://byc1ai7m1e8hf" path="res://Art/корова.png" id="6_k1m2l"]
+[ext_resource type="Script" uid="uid://dq2xs3iqnxbyx" path="res://Scripts.Deni/корова_2.gd" id="7_kpxtb"]
+[ext_resource type="Script" uid="uid://b0aykay8hkp77" path="res://Scripts.Deni/корова_3.gd" id="8_h742x"]
+[ext_resource type="Texture2D" uid="uid://d25hijf6jpib7" path="res://Art/заяц.png" id="9_u2fmc"]
+[ext_resource type="Script" uid="uid://r5aycsqagb50" path="res://Scripts.Deni/заяц_2.gd" id="10_r84sp"]
+[ext_resource type="Script" uid="uid://bkinhu6miffe0" path="res://Scripts.Deni/заяц_3.gd" id="11_f80oy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2xui"]
 texture = ExtResource("1_q2xui")
@@ -1109,6 +1117,12 @@ texture_region_size = Vector2i(38, 38)
 tile_size = Vector2i(38, 38)
 sources/0 = SubResource("TileSetAtlasSource_3wsip")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpxtb"]
+size = Vector2(244.50787, 417.09735)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7jvp"]
+size = Vector2(107.87964, 215.64221)
+
 [node name="Node2D" type="Node2D" unique_id=1098396671]
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=702380585]
@@ -1150,3 +1164,105 @@ step = 0.1
 value = 100.0
 show_percentage = false
 script = ExtResource("3_va0yt")
+
+[node name="корова" type="CharacterBody2D" parent="." unique_id=784140060]
+position = Vector2(401.99997, 253)
+scale = Vector2(0.15758316, 0.08810889)
+script = ExtResource("5_r84sp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="корова" unique_id=153558322]
+position = Vector2(107.879715, 34.048748)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_kpxtb")
+
+[node name="Sprite2D" type="Sprite2D" parent="корова" unique_id=1710271238]
+position = Vector2(101.53386, 22.699234)
+scale = Vector2(3.5842607, 6.634146)
+texture = ExtResource("6_k1m2l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="корова" unique_id=2053127719]
+
+[node name="корова2" type="CharacterBody2D" parent="." unique_id=1615334299]
+position = Vector2(401.99997, 253)
+scale = Vector2(0.15758316, 0.08810889)
+script = ExtResource("7_kpxtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="корова2" unique_id=429796830]
+position = Vector2(3864.6265, -556.13007)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_kpxtb")
+
+[node name="Sprite2D" type="Sprite2D" parent="корова2" unique_id=368709558]
+position = Vector2(3851.934, -567.4796)
+scale = Vector2(3.5842607, 6.634146)
+texture = ExtResource("6_k1m2l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="корова2" unique_id=1590307759]
+
+[node name="корова3" type="CharacterBody2D" parent="." unique_id=1975463731]
+position = Vector2(401.99997, 253)
+scale = Vector2(0.15758316, 0.08810889)
+script = ExtResource("8_h742x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="корова3" unique_id=701828172]
+position = Vector2(3452.1458, 3802.1133)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_kpxtb")
+
+[node name="Sprite2D" type="Sprite2D" parent="корова3" unique_id=538296780]
+position = Vector2(3445.8, 3813.463)
+scale = Vector2(3.5842607, 6.634146)
+texture = ExtResource("6_k1m2l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="корова3" unique_id=1109127228]
+
+[node name="заяц1" type="CharacterBody2D" parent="." unique_id=1833277545]
+position = Vector2(401.99997, 253)
+scale = Vector2(0.15758316, 0.08810889)
+script = ExtResource("5_pr0hy")
+
+[node name="Sprite2D" type="Sprite2D" parent="заяц1" unique_id=347912710]
+position = Vector2(-996.299, 3325.4307)
+scale = Vector2(3.5842607, 6.634146)
+texture = ExtResource("9_u2fmc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="заяц1" unique_id=584405023]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="заяц1" unique_id=1881811887]
+position = Vector2(-996.29913, 3314.0813)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_b7jvp")
+
+[node name="заяц2" type="CharacterBody2D" parent="." unique_id=340189623]
+position = Vector2(401.99997, 253)
+scale = Vector2(0.15758316, 0.08810889)
+script = ExtResource("10_r84sp")
+
+[node name="Sprite2D" type="Sprite2D" parent="заяц2" unique_id=599628097]
+position = Vector2(5659.273, 1602.9755)
+scale = Vector2(3.020649, 6.083702)
+texture = ExtResource("9_u2fmc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="заяц2" unique_id=2133464380]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="заяц2" unique_id=1663851850]
+position = Vector2(5660.5034, 1600.2926)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_b7jvp")
+
+[node name="заяц3" type="CharacterBody2D" parent="." unique_id=1608762033]
+position = Vector2(401.99997, 253)
+scale = Vector2(0.15758316, 0.08810889)
+script = ExtResource("11_f80oy")
+
+[node name="Sprite2D" type="Sprite2D" parent="заяц3" unique_id=1429038777]
+position = Vector2(-602.85583, 8058.2104)
+scale = Vector2(3.5842607, 6.634146)
+texture = ExtResource("9_u2fmc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="заяц3" unique_id=1833626091]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="заяц3" unique_id=460596323]
+position = Vector2(-602.85583, 8058.21)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_b7jvp")
