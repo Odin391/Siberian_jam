@@ -1,16 +1,16 @@
 [gd_scene format=4 uid="uid://bej3vd8hk8drm"]
 
-[ext_resource type="Script" uid="uid://rablhmqr65wd" path="res://Scripts.Deni/lvl_1.gd" id="1_b7jvp"]
+[ext_resource type="Script" uid="uid://f5xj81i7720d" path="res://Scripts.Deni/lvl_1.gd" id="1_b7jvp"]
 [ext_resource type="Texture2D" uid="uid://keakkn7clcxc" path="res://Art/LandSkape1.png" id="1_q2xui"]
 [ext_resource type="PackedScene" uid="uid://bw13kv48qxjgy" path="res://Scripts.Deni/gamer.tscn" id="2_sagh3"]
-[ext_resource type="Script" uid="uid://dpavv06basctv" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
-[ext_resource type="Script" uid="uid://b0cwn40j0smpm" path="res://Scripts.Deni/pause_menu.gd" id="3_f80oy"]
-[ext_resource type="Script" uid="uid://bak44ofgf72ao" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
-[ext_resource type="Script" uid="uid://bam8otaqex27v" path="res://Scripts.Danya/character_body_2d.gd" id="5_pr0hy"]
-[ext_resource type="Script" uid="uid://btwjphru5m46" path="res://Scripts.Deni/корова.gd" id="5_r84sp"]
+[ext_resource type="Script" uid="uid://ye6muaq6xfpu" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
+[ext_resource type="Script" uid="uid://d4fdmfvlcm8xi" path="res://Scripts.Deni/pause_menu.gd" id="3_f80oy"]
+[ext_resource type="Script" uid="uid://bwv3w77csv5rj" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
+[ext_resource type="Script" uid="uid://cns7miixp5kd3" path="res://Scripts.Deni/корова.gd" id="5_r84sp"]
 [ext_resource type="Texture2D" uid="uid://byc1ai7m1e8hf" path="res://Art/корова.png" id="6_k1m2l"]
 [ext_resource type="Script" uid="uid://cnpli85qew3fd" path="res://Scripts.Danya/ui.gd" id="9_r84sp"]
 [ext_resource type="Texture2D" uid="uid://d25hijf6jpib7" path="res://Art/заяц.png" id="9_u2fmc"]
+[ext_resource type="Script" uid="uid://dv7lriheokf3q" path="res://Scripts.Deni/заяц_1.gd" id="10_u2fmc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2xui"]
 texture = ExtResource("1_q2xui")
@@ -1365,7 +1365,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(265.99994, -84)
 scale = Vector2(0.15758316, 0.08810889)
 collision_mask = 3
-script = ExtResource("5_pr0hy")
+script = ExtResource("10_u2fmc")
 
 [node name="Sprite2D" type="Sprite2D" parent="заяц1" unique_id=347912710]
 position = Vector2(-996.299, 3325.4307)
