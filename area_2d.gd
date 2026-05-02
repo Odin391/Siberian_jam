@@ -33,6 +33,3 @@ func die():
 	# Добавь в конец класса Gamer.gd
 func get_hp():
 	return hp
-
-func get_max_hp():
-	return max_hp

@@ -1,9 +1,13 @@
 extends Area2D
 
-func _ready():
-	area_entered.connect(_on_collect)
+@export var item_name = "Яблоко"
+@export var item_icon = null   # перетащите иконку
 
-func _on_collect(area):
+func _ready():
+	area_entered.connect(_on_area_entered)
+
+func _on_area_entered(area):
 	if area.is_in_group("player"):
-		Inventory.add_coin()   # добавляем монету
-		queue_free()           # монета исчезает
+		print("Добавляем ", item_name)
+		InventoryManager.add_item(item_name, item_icon)
+		queue_free()
