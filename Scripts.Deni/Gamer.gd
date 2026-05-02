@@ -42,9 +42,18 @@ func _process(delta: float) -> void:
 	else:
 		GlobalInfo.in_shift = false
 	
+	if velocity == Vector2.ZERO:
+		$Sprite2D.play("idle")
+	elif velocity.y > 0:
+		$Sprite2D.play("go_forward")
+	elif velocity.y < 0:
+		$Sprite2D.play("go_back")
+	elif velocity <= Vector2(-1, -1) or velocity <= Vector2(-1, 1):
+		$Sprite2D.play("go_left")
+	elif velocity.x > 0:
+		$Sprite2D.play("go_right")
 	
-	
-	
+	print(velocity)
 	move_and_slide()
 
 
