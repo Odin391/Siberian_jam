@@ -20,9 +20,6 @@ var moo_sound = preload("res://Art/the-wounded-hare-screams (online-audio-conver
 var last_index: int = -1   # индекс последней выбранной точки
 
 func _ready():
-	if waypoints_tile.is_empty():
-		print("Нет точек!")
-		return
 	
 	audio_player = AudioStreamPlayer2D.new()
 	audio_player.stream = moo_sound

@@ -24,7 +24,7 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	
 	
-	if GlobalInfo.stamina_value != 0.0:
+	if GlobalInfo.stamina_value > 0.0:
 		velocity.y = Input.get_axis("W", "S") * speed
 		velocity.x = Input.get_axis("A", "D") * speed
 	else:
@@ -53,7 +53,6 @@ func _process(delta: float) -> void:
 	elif velocity.x > 0:
 		$Sprite2D.play("go_right")
 	
-	print(velocity)
 	move_and_slide()
 
 
