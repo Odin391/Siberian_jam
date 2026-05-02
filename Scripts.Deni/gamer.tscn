@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bw13kv48qxjgy"]
 
-[ext_resource type="Script" uid="uid://dii6qcltrsvw7" path="res://Scripts.Deni/Gamer.gd" id="1_vxk36"]
+[ext_resource type="Script" uid="uid://8i85mquvmu7a" path="res://Scripts.Deni/Gamer.gd" id="1_vxk36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_582am"]
 size = Vector2(10.419285, 7.8555365)

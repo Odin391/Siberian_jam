@@ -14,8 +14,9 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LMB"):
-		GlobalInfo.mana_value -= 20
-		_spawn()
+		if GlobalInfo.mana_value != 0:
+			_spawn()
+			GlobalInfo.mana_value -= 20
 
 
 
@@ -23,7 +24,6 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	
 	
-	print(GlobalInfo.stamina_value)
 	if GlobalInfo.stamina_value != 0.0:
 		velocity.y = Input.get_axis("W", "S") * speed
 		velocity.x = Input.get_axis("A", "D") * speed
