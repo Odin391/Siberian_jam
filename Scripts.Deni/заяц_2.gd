@@ -28,7 +28,7 @@ func _ready():
 	audio_player.stream = moo_sound
 	
 	# Настройка расстояния слышимости
-	audio_player.max_distance = 250.0       # на каком расстоянии звук пропадает (в пикселях)
+	audio_player.max_distance = 150.0       # на каком расстоянии звук пропадает (в пикселях)
 	audio_player.attenuation = 1.5          # сила затухания (чем больше, тем быстрее тише)
 	
 	add_child(audio_player)
