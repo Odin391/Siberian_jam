@@ -1122,6 +1122,8 @@ sources/0 = SubResource("TileSetAtlasSource_3wsip")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stkd2"]
 bg_color = Color(0.060735293, 0.060735293, 0.060735293, 0.68235296)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7jvp"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpxtb"]
 size = Vector2(244.50787, 417.09735)
 
@@ -1200,6 +1202,38 @@ layout_mode = 0
 offset_right = 32.0
 offset_bottom = 28.0
 text = "Back"
+
+[node name="Panel" type="Panel" parent="Gamer/PauseMenu/Panel/Panel" unique_id=1302439513]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 35.0
+offset_right = 87.0
+offset_bottom = 141.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b7jvp")
+
+[node name="Panel2" type="Panel" parent="Gamer/PauseMenu/Panel/Panel" unique_id=233946839]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 149.0
+offset_right = 86.0
+offset_bottom = 255.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b7jvp")
+
+[node name="Panel3" type="Panel" parent="Gamer/PauseMenu/Panel/Panel" unique_id=304347348]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 35.0
+offset_right = 305.0
+offset_bottom = 141.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b7jvp")
+
+[node name="Panel4" type="Panel" parent="Gamer/PauseMenu/Panel/Panel" unique_id=1051067339]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 148.0
+offset_right = 306.0
+offset_bottom = 254.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b7jvp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1835741156]
 

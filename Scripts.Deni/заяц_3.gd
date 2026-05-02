@@ -5,11 +5,11 @@ extends CharacterBody2D
 @export var pause_seconds: float = 4.0
 
 @export var waypoints_tile: Array[Vector2] = [
-	Vector2(1, 29),
-	Vector2(16, 29),
-	Vector2(13, 21),
-	Vector2(7, 20),
-	Vector2(7, 24)
+	Vector2(6, 20),
+	Vector2(13, 29),
+	Vector2(9, 24),
+	Vector2(8, 19),
+	Vector2(13, 26)
 ]
 
 var target_position: Vector2
@@ -29,7 +29,7 @@ func _ready():
 	
 	# Настройка расстояния слышимости
 	audio_player.max_distance = 250.0       # на каком расстоянии звук пропадает (в пикселях)
-	audio_player.attenuation = 2.5          # сила затухания (чем больше, тем быстрее тише)
+	audio_player.attenuation = 1.5          # сила затухания (чем больше, тем быстрее тише)
 	
 	add_child(audio_player)
 	
