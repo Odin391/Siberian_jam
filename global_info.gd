@@ -13,6 +13,7 @@ var mana_value = 100
 
 
 # player
+var health = 10
 var in_action = false
 var in_shift = false
 ##

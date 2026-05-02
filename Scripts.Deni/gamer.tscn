@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://8i85mquvmu7a" path="res://Scripts.Deni/Gamer.gd" id="1_vxk36"]
 [ext_resource type="Texture2D" uid="uid://dcx4d6o8o2jyy" path="res://animations/Gamer.png" id="2_vxk36"]
 [ext_resource type="Script" uid="uid://bmrkgvneiylk0" path="res://Scripts.Deni/Player_anim.gd" id="3_3s3d0"]
+[ext_resource type="Script" uid="uid://cnpli85qew3fd" path="res://Scripts.Danya/ui.gd" id="4_halx8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_582am"]
 size = Vector2(8.944155, 5.7833056)
@@ -165,3 +166,18 @@ script = ExtResource("3_3s3d0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=331978738]
 zoom = Vector2(3.39, 3.39)
+
+[node name="HPLabel" type="Label" parent="." unique_id=463744274]
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.083000004
+anchor_right = 0.039
+anchor_bottom = 0.083000004
+offset_left = -15.0
+offset_top = -25.000002
+offset_right = 67.0
+offset_bottom = 25.000006
+scale = Vector2(0.18135321, 0.18776387)
+theme_override_font_sizes/font_size = 30
+script = ExtResource("4_halx8")
+metadata/_edit_use_anchors_ = true

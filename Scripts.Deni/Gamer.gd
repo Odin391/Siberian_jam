@@ -1,6 +1,9 @@
 extends CharacterBody2D
 class_name Gamer
 
+
+var hp = 10
+var max_hp = 10
 var speed = 40
 
 var ProgressBarr = get_parent()

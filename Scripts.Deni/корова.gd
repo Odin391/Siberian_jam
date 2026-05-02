@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var pause_seconds: float = 4.0
 
 @export var waypoints_tile: Array[Vector2] = [
-	Vector2(4, 13),
+	Vector2(4, 2),
 	Vector2(1, 8),
 	Vector2(0, 25),
 	Vector2(8, 19),
@@ -79,3 +79,7 @@ func _pick_random_target():
 		tile_coord.x * tile_size.x + tile_size.x / 2,
 		tile_coord.y * tile_size.y + tile_size.y / 2
 	)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass
