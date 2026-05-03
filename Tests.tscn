@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvwuw0f62r0uw"]
 
-[ext_resource type="PackedScene" uid="uid://clt0tee07srb7" path="res://Scripts.Deni/gamer.tscn" id="2_yh4gp"]
+[ext_resource type="PackedScene" uid="uid://bw13kv48qxjgy" path="res://Scripts.Deni/gamer.tscn" id="2_yh4gp"]
 
 [node name="Node2D" type="Node2D" unique_id=119205528]
 

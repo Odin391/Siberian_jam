@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ynt72a4xfq0l"]
 
-[ext_resource type="Script" uid="uid://by6g17755ejyq" path="res://area_2d_2.gd" id="1_wknpg"]
+[ext_resource type="Script" uid="uid://bdia4ougig6cn" path="res://area_2d_2.gd" id="1_wknpg"]
 [ext_resource type="Texture2D" uid="uid://cc0xbecbnum4o" path="res://Art/Untitled 04-30-2026 11-35-59.png" id="2_0fplh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg5wv"]

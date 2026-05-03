@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cq048045ohuts"]
+[gd_scene format=3 uid="uid://cchwdjjnualo2"]
 
-[ext_resource type="Script" uid="uid://whffsye0fbiq" path="res://rfce_.gd" id="1_wkco4"]
-[ext_resource type="Script" uid="uid://cktnoxpss2pa5" path="res://camera_2d.gd" id="2_i3sdr"]
+[ext_resource type="Script" uid="uid://d2yrsoe13wtgr" path="res://rfce_.gd" id="1_wkco4"]
+[ext_resource type="Script" uid="uid://bt5iseuabwu4s" path="res://camera_2d.gd" id="2_i3sdr"]
 [ext_resource type="VideoStream" uid="uid://clme1dovxdwfp" path="res://Art/sagjdfjgnbdjsfdhg.ogv" id="2_wkco4"]
 
 [node name="Node2D" type="Node2D" unique_id=1772702541]

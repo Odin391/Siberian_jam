@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jam_Siberian"
-run/main_scene="res://Scripts.Danya/Main.tscn"
+run/main_scene="uid://c4lqpg0hvgc2i"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

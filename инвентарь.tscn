@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://e7tfva5q7gcn" path="res://animations/fireballs/fireball_high_speed_side_small/imgs/img_39.png" id="42_p4iqs"]
 [ext_resource type="PackedScene" uid="uid://bfgb2qj5hvihh" path="res://area_2d_2.tscn" id="44_2y3j7"]
 [ext_resource type="Script" uid="uid://bt6mitx43i04d" path="res://control.gd" id="45_fc0fa"]
-[ext_resource type="Script" uid="uid://dlkif0heycrjw" path="res://area_2d.gd" id="45_yndvx"]
+[ext_resource type="Script" uid="uid://m6em0rxbnl4e" path="res://area_2d.gd" id="45_yndvx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ab6m4"]
 texture = ExtResource("1_cymth")

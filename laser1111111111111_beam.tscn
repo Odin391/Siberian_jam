@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bcrdtkc86x2my"]
+[gd_scene format=3 uid="uid://cfno8litqfj5w"]
 
-[ext_resource type="Script" uid="uid://bnso2yfr5uj60" path="res://laser_beam.gd" id="1_mhvn4"]
+[ext_resource type="Script" uid="uid://doqi6i0quahav" path="res://laser_beam.gd" id="1_mhvn4"]
 [ext_resource type="Texture2D" uid="uid://boofn6hyeyjmt" path="res://Art/images-_3_.png" id="2_a35mv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eaigp"]

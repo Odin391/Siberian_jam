@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://keakkn7clcxc" path="res://Art/LandSkape1.png" id="1_cxnf7"]
 [ext_resource type="Script" uid="uid://bam8otaqex27v" path="res://Scripts.Danya/character_body_2d.gd" id="2_cxnf7"]
 [ext_resource type="Texture2D" uid="uid://c41k4vu3mplto" path="res://Art/основная дивка.png" id="2_oj6dt"]
-[ext_resource type="Script" uid="uid://dqcl1mmahj5ss" path="res://Scripts.Danya/character_body_2d_3.gd" id="6_1l4i0"]
+[ext_resource type="Script" uid="uid://xiwreoxyeowp" path="res://Scripts.Danya/character_body_2d_3.gd" id="6_1l4i0"]
 [ext_resource type="Texture2D" uid="uid://cc0xbecbnum4o" path="res://Art/Untitled 04-30-2026 11-35-59.png" id="6_i32l6"]
 [ext_resource type="Script" uid="uid://cnpli85qew3fd" path="res://Scripts.Danya/ui.gd" id="6_t3fc5"]
 

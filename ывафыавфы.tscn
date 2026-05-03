@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dlaxpsrcxm0hf"]
+[gd_scene format=3 uid="uid://byjvax266p8st"]
 
-[ext_resource type="Script" uid="uid://b33a813ou5doo" path="res://ывафыавфы.gd" id="1_hl1lc"]
+[ext_resource type="Script" uid="uid://jdcx38s3unr5" path="res://ывафыавфы.gd" id="1_hl1lc"]
 [ext_resource type="Texture2D" uid="uid://djjq7l76o7ixf" path="res://animations/fireballs/fireball_high_speed_side_small/imgs/img_3.png" id="2_xlmcf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnadh"]
