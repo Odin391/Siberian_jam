@@ -1,5 +1,5 @@
 extends Control
-@onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var v_box_container: VBoxContainer = $Panel/NinePatchRect/VBoxContainer
 @onready var panel_2: Panel = $Panel2
 
 
