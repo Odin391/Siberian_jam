@@ -1178,6 +1178,7 @@ position = Vector2(49, 127)
 collision_mask = 2
 
 [node name="PauseMenu" type="Control" parent="Gamer" unique_id=945749987]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

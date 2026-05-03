@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 40.0            # скорость после диалога
 @export var walk_direction: Vector2 = Vector2.UP
-@export var interaction_distance: float = 190.0
+@export var interaction_distance: float = 150.0
 
 var can_interact = false
 var is_active = false      # движется ли сейчас
