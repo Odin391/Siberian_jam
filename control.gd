@@ -17,7 +17,6 @@ func _input(event):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			hide()
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func refresh():
 	item_list.clear()
