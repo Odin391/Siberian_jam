@@ -1,70 +1,54 @@
 extends CharacterBody2D
 
-@export var speed: float = 50.0
-@export var tile_size: Vector2 = Vector2(38, 38)
-@export var pause_seconds: float = 1.0
+@export var health = 30
+@export var attack_interval = 4.0
+@export var coffee_shot_scene: PackedScene
 
-var waypoints_tile: Array[Vector2] = []  # Теперь пустой массив
-var target_position: Vector2
-var is_waiting: bool = false
-var audio_player: AudioStreamPlayer2D
-var rabbit_sound = preload("res://Art/the-wounded-hare-screams (online-audio-converter.com).mp3")
-var last_index: int = -1
+var player: Node2D
+var attack_timer: Timer
 
 func _ready():
-	generate_waypoints(5)  # Генерируем 5 точек при старте
+	# Устанавливаем глобальные переменные здоровья
+	GlobalInfo.boss_health = health
+	GlobalInfo.max_boss_health = health
+	print("Здоровье босса установлено: ", GlobalInfo.boss_health)
 
-	if waypoints_tile.is_empty():
-		print("Нет точек!")
-		return
+	player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		await get_tree().create_timer(0.5).timeout
+		player = get_tree().get_first_node_in_group("player")
+		if player == null:
+			print("Босс: игрок не найден!")
+			return
 
-	audio_player = AudioStreamPlayer2D.new()
-	audio_player.stream = rabbit_sound
-	audio_player.max_distance = 150.0
-	audio_player.attenuation = 1.5
-	audio_player.finished.connect(_on_audio_finished)
-	add_child(audio_player)
-	audio_player.play()
-	_pick_random_target()
+	print("✅ Игрок найден, запускаем атаки")
+	attack_timer = Timer.new()
+	attack_timer.wait_time = attack_interval
+	attack_timer.timeout.connect(_on_attack_timer_timeout)
+	add_child(attack_timer)
+	attack_timer.start()
 
+func _on_attack_timer_timeout():
+	if player and coffee_shot_scene:
+		attack_coffee_shot()
+	else:
+		print("Босс: не могу атаковать (снаряд не назначен)")
 
-func _physics_process(delta):
-	
-	if waypoints_tile.is_empty():
-		return
-	
-	var direction = (target_position - global_position).normalized()
-	velocity = direction * speed
-	move_and_slide()
-	
-	if global_position.distance_to(target_position) < 10.0:
-		velocity = Vector2.ZERO
-		
-		await get_tree().create_timer(pause_seconds).timeout
-		_pick_random_target()
+func attack_coffee_shot():
+	var shot = coffee_shot_scene.instantiate()
+	shot.global_position = global_position
+	var dir = (player.global_position - global_position).normalized()
+	shot.direction = dir
+	get_tree().root.add_child(shot)
 
-func _on_audio_finished():
-	audio_player.play()   # перезапускаем, если не зациклено
+func take_damage(amount):
+	health -= amount
+	GlobalInfo.boss_health = health
+	print("Босс получил урон, HP: ", GlobalInfo.boss_health)
+	if health <= 0:
+		die()
 
-
-func generate_waypoints(count: int):
-	waypoints_tile.clear()  # Очищаем предыдущие точки
-	for i in range(count):
-		var x = randi_range(GlobalInfo.min_for_cow_x, GlobalInfo.max_for_cow_x)
-		var y = randi_range(GlobalInfo.min_for_cow_y, GlobalInfo.max_for_cow_y)
-		waypoints_tile.append(Vector2(x, y))
-
-func _pick_random_target():
-	if last_index != 6:
-		last_index += 1
-		target_position = waypoints_tile[last_index]
-	elif last_index == 6:
-		last_index = 0
-	
-	
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Bullet:
-		$HPLabel.health -= 2
-		body.queue_free()
+func die():
+	print("Босс побеждён")
+	GlobalInfo.boss_health = 0
+	queue_free()

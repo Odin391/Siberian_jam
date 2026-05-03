@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dlaxpsrcxm0hf"]
+
+[ext_resource type="Script" uid="uid://b33a813ou5doo" path="res://ывафыавфы.gd" id="1_hl1lc"]
+[ext_resource type="Texture2D" uid="uid://djjq7l76o7ixf" path="res://animations/fireballs/fireball_high_speed_side_small/imgs/img_3.png" id="2_xlmcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnadh"]
+
+[node name="ывафыавфы" type="Area2D" unique_id=1842371631]
+script = ExtResource("1_hl1lc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=374793828]
+shape = SubResource("RectangleShape2D_gnadh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=234534499]
+position = Vector2(-1.9999998, -2.999998)
+scale = Vector2(0.029999996, 0.060000006)
+texture = ExtResource("2_xlmcf")
