@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bfgb2qj5hvihh" path="res://area_2d_2.tscn" id="12_r84sp"]
 [ext_resource type="Script" uid="uid://cf1xfmqqjlu4f" path="res://Scripts.Deni/character_body_2d.gd" id="13_b7jvp"]
 [ext_resource type="Texture2D" uid="uid://wy60lv7wcpot" path="res://Art/Снимок экрана 2026-04-19 203610.png" id="14_stkd2"]
+[ext_resource type="Script" uid="uid://ul364y2wye83" path="res://Scripts.Deni/elder_2.gd" id="15_gi8li"]
+[ext_resource type="Script" uid="uid://x52ppyrqfkq6" path="res://Scripts.Deni/quest_state.gd" id="16_gi8li"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2xui"]
 texture = ExtResource("1_q2xui")
@@ -1250,7 +1252,7 @@ size = Vector2(63.458588, 34.04898)
 size = Vector2(82.49611, 102.14636)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi8li"]
-size = Vector2(29, 17.25)
+size = Vector2(48.5, 17.25)
 
 [node name="Node2D2" type="Node2D" unique_id=1098396671]
 script = ExtResource("1_b7jvp")
@@ -1499,6 +1501,30 @@ offset_top = -44.0
 offset_right = 16.0
 offset_bottom = -17.0
 theme_override_font_sizes/font_size = 8
+
+[node name="Elder2" type="CharacterBody2D" parent="." unique_id=1254210615]
+position = Vector2(1069, 1909)
+collision_mask = 2
+script = ExtResource("15_gi8li")
+
+[node name="Sprite2D" type="Sprite2D" parent="Elder2" unique_id=91734494]
+position = Vector2(-2.5, 1.5)
+scale = Vector2(0.39814815, 0.3490566)
+texture = ExtResource("14_stkd2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elder2" unique_id=1772358542]
+position = Vector2(-1.5, 15.5)
+shape = SubResource("RectangleShape2D_gi8li")
+
+[node name="Label" type="Label" parent="Elder2" unique_id=894462441]
+offset_left = -20.0
+offset_top = -37.0
+offset_right = 19.0
+offset_bottom = -10.0
+theme_override_font_sizes/font_size = 10
+
+[node name="QuestState" type="Node" parent="." unique_id=1792292485]
+script = ExtResource("16_gi8li")
 
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button2" to="." method="_on_button_2_pressed"]

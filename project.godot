@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 "ПИСЮНДРА"="*uid://bbusbpy3awm22"
 GlobalInfo="*uid://bltbxf1yygeo2"
 InventoryManager="*res://inventory_manager.gd"
+QuestState="*uid://x52ppyrqfkq6"
 
 [display]
 
