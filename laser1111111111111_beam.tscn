@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bcrdtkc86x2my"]
+
+[ext_resource type="Script" uid="uid://bnso2yfr5uj60" path="res://laser_beam.gd" id="1_mhvn4"]
+[ext_resource type="Texture2D" uid="uid://boofn6hyeyjmt" path="res://Art/images-_3_.png" id="2_a35mv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaigp"]
+size = Vector2(14.996397, 181.01996)
+
+[node name="LaserBeam" type="Area2D" unique_id=1351418594]
+script = ExtResource("1_mhvn4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=504299157]
+position = Vector2(-1, -1)
+rotation = 1.569931
+scale = Vector2(0.6057556, 1.0391654)
+texture = ExtResource("2_a35mv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=279604099]
+position = Vector2(2.5000181, 0.50526303)
+rotation = -0.0035110675
+shape = SubResource("RectangleShape2D_eaigp")

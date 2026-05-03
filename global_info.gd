@@ -28,6 +28,8 @@ var max_for_cow_y = 921
 # player
 var Gamer_health = 10
 var max_gamer_health = 10
+var boss_health = 30
+var max_boss_health = 30
 var in_action = false
 var in_shift = false
 ##

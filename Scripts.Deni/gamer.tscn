@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://8i85mquvmu7a" path="res://Scripts.Deni/Gamer.gd" id="1_vxk36"]
 [ext_resource type="Texture2D" uid="uid://dcx4d6o8o2jyy" path="res://animations/Gamer.png" id="2_vxk36"]
-[ext_resource type="Script" uid="uid://bmrkgvneiylk0" path="res://Scripts.Deni/Player_anim.gd" id="3_3s3d0"]
-[ext_resource type="Script" uid="uid://30wah3nb5dta" path="res://Scripts.Deni/hp_label_player.gd" id="4_halx8"]
+[ext_resource type="Script" uid="uid://du3wclotcvbgu" path="res://Scripts.Deni/Player_anim.gd" id="3_3s3d0"]
+[ext_resource type="Script" uid="uid://bikt4pc6jglgb" path="res://Scripts.Deni/hp_label_player.gd" id="4_halx8"]
 [ext_resource type="Script" uid="uid://bt6mitx43i04d" path="res://control.gd" id="5_224py"]
 [ext_resource type="Script" uid="uid://c2ysm2ydoql8w" path="res://Scripts.Deni/wake_up.gd" id="6_840wy"]
+[ext_resource type="Texture2D" uid="uid://dqi5a8hdfv7t6" path="res://animations/фон кнопок.png" id="6_840wy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_582am"]
 size = Vector2(8.944155, 5.7833056)
@@ -146,8 +147,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_840wy"]
-bg_color = Color(0.92659914, 0.43943134, 0.1400955, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lldyl"]
+texture = ExtResource("6_840wy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtgxi"]
 
 [sub_resource type="Animation" id="Animation_ycarb"]
 length = 0.001
@@ -244,15 +247,16 @@ offset_left = -103.0
 offset_top = -1.0
 offset_right = 1.0
 offset_bottom = 104.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_840wy")
+theme_override_styles/panel = SubResource("StyleBoxTexture_lldyl")
 
 [node name="ItemList" type="ItemList" parent="InventoryUI/Panel" unique_id=2070118337]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 4.0
-offset_right = 92.0
-offset_bottom = 98.0
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 84.0
+offset_bottom = 92.0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/panel = SubResource("StyleBoxTexture_mtgxi")
 allow_reselect = true
 allow_rmb_select = true
 auto_width = true

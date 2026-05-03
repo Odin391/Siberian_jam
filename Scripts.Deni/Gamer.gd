@@ -1,16 +1,11 @@
 extends CharacterBody2D
 class_name Gamer
 
-
-var hp = 10
-var max_hp = 10
 var speed = 40
 
-var ProgressBarr = get_parent()
-
 func _ready():
-	add_to_group("player")   # добавляем игрока в группу для обнаружения предметами
-
+	add_to_group("player")
+	GlobalInfo.Gamer_health = GlobalInfo.max_gamer_health   # убедитесь, что эти переменные объявлены в GlobalInfo
 
 @onready var Mana = get_parent().get_node("CanvasLayer/Mana")
 @onready var koffeBall = preload("res://Scripts.Deni/bullet.tscn")
@@ -21,12 +16,7 @@ func _input(event: InputEvent) -> void:
 			_spawn()
 			GlobalInfo.mana_value -= 20
 
-
-
-
 func _process(delta: float) -> void:
-	
-	
 	if GlobalInfo.stamina_value > 0.0:
 		velocity.y = Input.get_axis("W", "S") * speed
 		velocity.x = Input.get_axis("A", "D") * speed
@@ -38,8 +28,9 @@ func _process(delta: float) -> void:
 	else:
 		GlobalInfo.in_action = false
 	
-	
+
 	if Input.is_action_pressed("Shift") and GlobalInfo.stamina_value > 0:
+
 		GlobalInfo.in_shift = true
 		velocity *= 2
 	else:
@@ -58,8 +49,17 @@ func _process(delta: float) -> void:
 	
 	move_and_slide()
 
-
 func _spawn():
 	var bullet = koffeBall.instantiate()
 	bullet.position = self.global_position
 	get_parent().add_child(bullet)
+
+func take_damage(amount: int):
+	GlobalInfo.Gamer_health -= amount
+	print("Игрок получил урон, HP: ", GlobalInfo.Gamer_health)
+	if GlobalInfo.Gamer_health <= 0:
+		die()
+
+func die():
+	print("Игрок умер")
+	# тут можно перезапустить сцену

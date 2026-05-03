@@ -1,23 +1,28 @@
 [gd_scene format=4 uid="uid://bej3vd8hk8drm"]
 
-[ext_resource type="Script" uid="uid://rablhmqr65wd" path="res://Scripts.Deni/lvl_1.gd" id="1_b7jvp"]
+[ext_resource type="Script" uid="uid://f5xj81i7720d" path="res://Scripts.Deni/lvl_1.gd" id="1_b7jvp"]
 [ext_resource type="Texture2D" uid="uid://keakkn7clcxc" path="res://Art/LandSkape1.png" id="1_q2xui"]
 [ext_resource type="PackedScene" uid="uid://bw13kv48qxjgy" path="res://Scripts.Deni/gamer.tscn" id="2_sagh3"]
-[ext_resource type="Script" uid="uid://dpavv06basctv" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
-[ext_resource type="Script" uid="uid://b0cwn40j0smpm" path="res://Scripts.Deni/pause_menu.gd" id="3_f80oy"]
-[ext_resource type="Script" uid="uid://bak44ofgf72ao" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
-[ext_resource type="Script" uid="uid://btwjphru5m46" path="res://Scripts.Deni/For_animal.gd" id="5_r84sp"]
+[ext_resource type="Script" uid="uid://ye6muaq6xfpu" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
+[ext_resource type="Script" uid="uid://d4fdmfvlcm8xi" path="res://Scripts.Deni/pause_menu.gd" id="3_f80oy"]
+[ext_resource type="Script" uid="uid://bwv3w77csv5rj" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
+[ext_resource type="Texture2D" uid="uid://dqi5a8hdfv7t6" path="res://animations/фон кнопок.png" id="5_62v0g"]
+[ext_resource type="Script" uid="uid://cxnia8xcqqin6" path="res://Scripts.Deni/For_animal.gd" id="5_r84sp"]
+[ext_resource type="Texture2D" uid="uid://dq4ns4j8qcd5b" path="res://animations/wooden-gold-buttons-ui-game_107791-5095-edited-free (carve.photos).png" id="6_i4p72"]
 [ext_resource type="Texture2D" uid="uid://byc1ai7m1e8hf" path="res://Art/корова.png" id="6_k1m2l"]
+[ext_resource type="Texture2D" uid="uid://dod4q3384usu6" path="res://animations/wooden-gold-buttons-ui-game_107791-5095-edited-free (carve.photos) (2).png" id="7_miyug"]
 [ext_resource type="Script" uid="uid://cnpli85qew3fd" path="res://Scripts.Danya/ui.gd" id="9_r84sp"]
 [ext_resource type="Texture2D" uid="uid://d25hijf6jpib7" path="res://Art/заяц.png" id="9_u2fmc"]
 [ext_resource type="PackedScene" uid="uid://bfgb2qj5hvihh" path="res://area_2d_2.tscn" id="12_r84sp"]
-[ext_resource type="Script" uid="uid://d3872pjmrk4r4" path="res://Scripts.Deni/character_body_2d.gd" id="13_b7jvp"]
+[ext_resource type="Script" uid="uid://cf1xfmqqjlu4f" path="res://Scripts.Deni/character_body_2d.gd" id="13_b7jvp"]
 [ext_resource type="Texture2D" uid="uid://wy60lv7wcpot" path="res://Art/Снимок экрана 2026-04-19 203610.png" id="14_stkd2"]
-[ext_resource type="Script" uid="uid://dc6pjrxh7v0k2" path="res://Scripts.Deni/elder_2.gd" id="15_gi8li"]
-[ext_resource type="Script" uid="uid://clrmsw1xla404" path="res://Scripts.Deni/coffee_tree.gd" id="16_c2oxf"]
-[ext_resource type="Script" uid="uid://dkdmxiq4og8" path="res://Scripts.Deni/quest_state.gd" id="16_gi8li"]
-[ext_resource type="Texture2D" uid="uid://c3y5rtnkai30d" path="res://Art/Sib_jam_pre_1.png" id="17_nkb8e"]
-[ext_resource type="PackedScene" uid="uid://q5m83p5ukiiq" path="res://Scripts.Deni/dropped_thing.tscn" id="18_ycarb"]
+[ext_resource type="Script" uid="uid://ul364y2wye83" path="res://Scripts.Deni/elder_2.gd" id="15_gi8li"]
+[ext_resource type="Script" uid="uid://x52ppyrqfkq6" path="res://Scripts.Deni/quest_state.gd" id="16_gi8li"]
+[ext_resource type="Script" uid="uid://d305inoe2hibs" path="res://Scripts.Deni/boss_latte.gd" id="17_c2oxf"]
+[ext_resource type="Texture2D" uid="uid://dl2ek1t7e2q7n" path="res://Art/ll-no-bg-preview (carve.photos).png" id="18_nkb8e"]
+[ext_resource type="PackedScene" uid="uid://dlaxpsrcxm0hf" path="res://ывафыавфы.tscn" id="18_ycarb"]
+[ext_resource type="PackedScene" uid="uid://bcrdtkc86x2my" path="res://laser1111111111111_beam.tscn" id="19_c35h6"]
+[ext_resource type="Script" uid="uid://d1pfj03w1j0nm" path="res://Scripts.Deni/hp_label.gd" id="20_ycarb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r84sp"]
 polygon = PackedVector2Array(-19, 19, -19, -19, 19, -19, 19, -14.1790695, -19, -15.453594, -15.612907, -14.1790695, -13.382492, -15.13496, -14.657013, 19)
@@ -1209,8 +1214,20 @@ texture_region_size = Vector2i(38, 38)
 tile_size = Vector2i(38, 38)
 sources/0 = SubResource("TileSetAtlasSource_3wsip")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stkd2"]
-bg_color = Color(0.060735293, 0.060735293, 0.060735293, 0.68235296)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nxqbb"]
+texture = ExtResource("5_62v0g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tm4b"]
+texture = ExtResource("6_i4p72")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bc48y"]
+texture = ExtResource("6_i4p72")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62v0g"]
+texture = ExtResource("5_62v0g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbxwh"]
+texture = ExtResource("7_miyug")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7jvp"]
 
@@ -1287,7 +1304,10 @@ size = Vector2(63.458588, 34.04898)
 size = Vector2(82.49611, 102.14636)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi8li"]
-size = Vector2(48.5, 17.25)
+size = Vector2(23, 17.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycarb"]
+size = Vector2(128, 134)
 
 [node name="Node2D2" type="Node2D" unique_id=1098396671]
 script = ExtResource("1_b7jvp")
@@ -1317,11 +1337,11 @@ script = ExtResource("3_f80oy")
 
 [node name="Panel" type="Panel" parent="Gamer/PauseMenu" unique_id=1073516728]
 layout_mode = 0
-offset_left = -162.0
-offset_top = -133.0
+offset_left = -188.0
+offset_top = -144.0
 offset_right = 164.0
 offset_bottom = 130.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_stkd2")
+theme_override_styles/panel = SubResource("StyleBoxTexture_nxqbb")
 
 [node name="Button" type="Button" parent="Gamer/PauseMenu/Panel" unique_id=1185249782]
 layout_mode = 1
@@ -1330,11 +1350,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -47.0
-offset_top = -31.0
-offset_right = 47.0
+offset_left = -50.0
+offset_top = -54.0
+offset_right = 44.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0tm4b")
 text = "Exist"
 
 [node name="Button2" type="Button" parent="Gamer/PauseMenu/Panel" unique_id=662402609]
@@ -1350,50 +1372,55 @@ offset_right = 63.0
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_bc48y")
 text = "Метаморфозы"
 
 [node name="Panel" type="Panel" parent="Gamer/PauseMenu/Panel" unique_id=692112815]
 layout_mode = 0
-offset_left = 2.0
-offset_right = 325.0
-offset_bottom = 264.0
+offset_left = 17.0
+offset_top = 8.0
+offset_right = 341.0
+offset_bottom = 267.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_62v0g")
 
 [node name="Button123" type="Button" parent="Gamer/PauseMenu/Panel/Panel" unique_id=2147403018]
 layout_mode = 0
-offset_right = 32.0
-offset_bottom = 28.0
-text = "Back"
+offset_left = 20.0
+offset_top = 22.0
+offset_right = 52.0
+offset_bottom = 50.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_wbxwh")
 
 [node name="Panel" type="Panel" parent="Gamer/PauseMenu/Panel/Panel" unique_id=1302439513]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 35.0
-offset_right = 87.0
-offset_bottom = 141.0
+offset_left = 49.0
+offset_top = 29.0
+offset_right = 123.0
+offset_bottom = 135.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b7jvp")
 
 [node name="Panel2" type="Panel" parent="Gamer/PauseMenu/Panel/Panel" unique_id=233946839]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 149.0
-offset_right = 86.0
-offset_bottom = 255.0
+offset_left = 50.0
+offset_top = 139.0
+offset_right = 120.0
+offset_bottom = 232.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b7jvp")
 
 [node name="Panel3" type="Panel" parent="Gamer/PauseMenu/Panel/Panel" unique_id=304347348]
 layout_mode = 0
-offset_left = 231.0
-offset_top = 35.0
-offset_right = 305.0
-offset_bottom = 141.0
+offset_left = 196.0
+offset_top = 28.0
+offset_right = 270.0
+offset_bottom = 134.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b7jvp")
 
 [node name="Panel4" type="Panel" parent="Gamer/PauseMenu/Panel/Panel" unique_id=1051067339]
 layout_mode = 0
-offset_left = 232.0
-offset_top = 148.0
-offset_right = 306.0
-offset_bottom = 254.0
+offset_left = 197.0
+offset_top = 140.0
+offset_right = 267.0
+offset_bottom = 231.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b7jvp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1835741156]
@@ -1586,7 +1613,7 @@ scale = Vector2(0.39814815, 0.3490566)
 texture = ExtResource("14_stkd2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elder" unique_id=377943643]
-position = Vector2(-1, 19)
+position = Vector2(-4.5, 19)
 shape = SubResource("RectangleShape2D_gi8li")
 
 [node name="Label" type="Label" parent="Elder" unique_id=1233736478]
@@ -1619,6 +1646,30 @@ theme_override_font_sizes/font_size = 10
 
 [node name="QuestState" type="Node" parent="." unique_id=1792292485]
 script = ExtResource("16_gi8li")
+
+[node name="BossLatte" type="CharacterBody2D" parent="." unique_id=1669610120]
+position = Vector2(1628, 2207)
+script = ExtResource("17_c2oxf")
+coffee_shot_scene = ExtResource("18_ycarb")
+laser_beam_scene = ExtResource("19_c35h6")
+
+[node name="Sprite2D" type="Sprite2D" parent="BossLatte" unique_id=1454014651]
+position = Vector2(19.000002, 32)
+scale = Vector2(3.40625, 3.8125)
+texture = ExtResource("18_nkb8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossLatte" unique_id=990279635]
+position = Vector2(5, 27)
+shape = SubResource("RectangleShape2D_ycarb")
+
+[node name="AttackTimer" type="Timer" parent="BossLatte" unique_id=1736379912]
+
+[node name="BossHealthLabel" type="Label" parent="BossLatte" unique_id=883838802]
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 33.0
+offset_bottom = -23.0
+script = ExtResource("20_ycarb")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1404407813]
 position = Vector2(1040, 1941)
