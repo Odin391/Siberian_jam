@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://8i85mquvmu7a" path="res://Scripts.Deni/Gamer.gd" id="1_vxk36"]
 [ext_resource type="Texture2D" uid="uid://dcx4d6o8o2jyy" path="res://animations/Gamer.png" id="2_vxk36"]
-[ext_resource type="Script" uid="uid://du3wclotcvbgu" path="res://Scripts.Deni/Player_anim.gd" id="3_3s3d0"]
-[ext_resource type="Script" uid="uid://bikt4pc6jglgb" path="res://Scripts.Deni/hp_label_player.gd" id="4_halx8"]
+[ext_resource type="Script" uid="uid://bmrkgvneiylk0" path="res://Scripts.Deni/Player_anim.gd" id="3_3s3d0"]
+[ext_resource type="Script" uid="uid://30wah3nb5dta" path="res://Scripts.Deni/hp_label_player.gd" id="4_halx8"]
 [ext_resource type="Script" uid="uid://bt6mitx43i04d" path="res://control.gd" id="5_224py"]
-[ext_resource type="Script" uid="uid://c2ysm2ydoql8w" path="res://Scripts.Deni/wake_up.gd" id="6_840wy"]
 [ext_resource type="Texture2D" uid="uid://dqi5a8hdfv7t6" path="res://animations/фон кнопок.png" id="6_840wy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_582am"]
@@ -269,7 +268,6 @@ offset_left = -288.0
 offset_top = -160.0
 offset_right = 287.0
 offset_bottom = 178.0
-script = ExtResource("6_840wy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Panel" unique_id=1475207383]
 libraries/ = SubResource("AnimationLibrary_lldyl")
