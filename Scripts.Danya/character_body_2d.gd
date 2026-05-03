@@ -84,3 +84,8 @@ func _pick_random_target():
 		tile_coord.x * tile_size.x + tile_size.x / 2,
 		tile_coord.y * tile_size.y + tile_size.y / 2
 	)
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Bullet:
+		$HPLabel.health -= 2
+		
+		body.queue_free()
