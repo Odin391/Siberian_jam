@@ -19,12 +19,16 @@ config/icon="res://icon.svg"
 
 "ПИСЮНДРА"="*uid://bbusbpy3awm22"
 GlobalInfo="*uid://bltbxf1yygeo2"
-InventoryManager="*uid://cxhsbol6pgb82"
+InventoryManager="*res://inventory_manager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[global_group]
+
+Gamer=""
 
 [input]
 
@@ -63,6 +67,11 @@ inventory={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":1091,"location":0,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_5="Gamers_area"
+2d_physics/layer_7="Drop_predmets"
 
 [physics]
 

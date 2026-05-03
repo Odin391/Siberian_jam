@@ -39,6 +39,9 @@ func _physics_process(delta):
 	if waypoints_tile.is_empty() or is_waiting:
 		return
 	
+	
+	
+	
 	var direction = (target_position - global_position).normalized()
 	velocity = direction * speed
 	move_and_slide()
@@ -82,4 +85,7 @@ func _pick_random_target():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
+	if body is Bullet:
+		$HPLabel.health -= 2
+		
+		body.queue_free()
