@@ -12,7 +12,7 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LMB"):
-		if GlobalInfo.mana_value != 0:
+		if GlobalInfo.mana_value > 0:
 			_spawn()
 			GlobalInfo.mana_value -= 20
 

@@ -1674,6 +1674,8 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="корова2" unique_id=1477330254]
 libraries/ = SubResource("AnimationLibrary_f80oy")
 
+[node name="Coffee tree" type="Node2D" parent="." unique_id=1494066374]
+
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Panel/Button123" to="." method="_on_button_123_pressed"]
