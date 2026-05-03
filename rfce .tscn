@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cq048045ohuts"]
 
-[ext_resource type="VideoStream" uid="uid://b8ewegj6cttjr" path="res://Art/вылфла.ogv" id="1_i3sdr"]
 [ext_resource type="Script" uid="uid://whffsye0fbiq" path="res://rfce_.gd" id="1_wkco4"]
 [ext_resource type="Script" uid="uid://cktnoxpss2pa5" path="res://camera_2d.gd" id="2_i3sdr"]
+[ext_resource type="VideoStream" uid="uid://clme1dovxdwfp" path="res://Art/sagjdfjgnbdjsfdhg.ogv" id="2_wkco4"]
 
 [node name="Node2D" type="Node2D" unique_id=1772702541]
 position = Vector2(-1, -1)
@@ -20,15 +20,15 @@ offset_right = 540.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("1_i3sdr")
+stream = ExtResource("2_wkco4")
 autoplay = true
 
 [node name="Button" type="Button" parent="VideoStreamPlayer" unique_id=1649165165]
 layout_mode = 0
-offset_left = 777.0
-offset_top = 579.0
-offset_right = 961.0
-offset_bottom = 653.0
+offset_left = 1690.0
+offset_top = 941.0
+offset_right = 1874.0
+offset_bottom = 1015.0
 theme_override_font_sizes/font_size = 30
 text = "PLAY"
 
