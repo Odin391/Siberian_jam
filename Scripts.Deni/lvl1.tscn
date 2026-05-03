@@ -14,7 +14,10 @@
 [ext_resource type="Script" uid="uid://d3872pjmrk4r4" path="res://Scripts.Deni/character_body_2d.gd" id="13_b7jvp"]
 [ext_resource type="Texture2D" uid="uid://wy60lv7wcpot" path="res://Art/Снимок экрана 2026-04-19 203610.png" id="14_stkd2"]
 [ext_resource type="Script" uid="uid://dc6pjrxh7v0k2" path="res://Scripts.Deni/elder_2.gd" id="15_gi8li"]
+[ext_resource type="Script" uid="uid://clrmsw1xla404" path="res://Scripts.Deni/coffee_tree.gd" id="16_c2oxf"]
 [ext_resource type="Script" uid="uid://dkdmxiq4og8" path="res://Scripts.Deni/quest_state.gd" id="16_gi8li"]
+[ext_resource type="Texture2D" uid="uid://c3y5rtnkai30d" path="res://Art/Sib_jam_pre_1.png" id="17_nkb8e"]
+[ext_resource type="PackedScene" uid="uid://q5m83p5ukiiq" path="res://Scripts.Deni/dropped_thing.tscn" id="18_ycarb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r84sp"]
 polygon = PackedVector2Array(-19, 19, -19, -19, 19, -19, 19, -14.1790695, -19, -15.453594, -15.612907, -14.1790695, -13.382492, -15.13496, -14.657013, 19)
@@ -1469,6 +1472,55 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="корова" unique_id=1378899695]
 libraries/ = SubResource("AnimationLibrary_f80oy")
 
+[node name="корова2" type="CharacterBody2D" parent="." unique_id=1125414095]
+position = Vector2(2471.9998, 304)
+scale = Vector2(0.15758316, 0.08810889)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("5_r84sp")
+type_of_animal = "cow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="корова2" unique_id=574550514]
+position = Vector2(1.029686, 129.00772)
+scale = Vector2(1.0000006, 1)
+shape = SubResource("RectangleShape2D_kpxtb")
+
+[node name="Sprite2D" type="Sprite2D" parent="корова2" unique_id=291054915]
+position = Vector2(-21.181015, -41.23591)
+scale = Vector2(3.5842607, 6.634146)
+texture = ExtResource("6_k1m2l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="корова2" unique_id=749440136]
+position = Vector2(-88.84158, -124.845695)
+
+[node name="Area2D" type="Area2D" parent="корова2" unique_id=1074168627]
+position = Vector2(0.0004043579, -0.00016784668)
+collision_layer = 4
+collision_mask = 97
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="корова2/Area2D" unique_id=1056774600]
+position = Vector2(0.00038146973, -0.00019836426)
+scale = Vector2(1.0000005, 1)
+shape = SubResource("RectangleShape2D_pfiw4")
+
+[node name="HPLabelCow" type="Label" parent="корова2" unique_id=1610037831]
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.083000004
+anchor_right = 0.039
+anchor_bottom = 0.083000004
+offset_left = -114.22502
+offset_top = -283.73993
+offset_right = -32.22502
+offset_bottom = -233.73991
+scale = Vector2(0.90624374, 1.4578785)
+theme_override_font_sizes/font_size = 30
+script = ExtResource("9_r84sp")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="корова2" unique_id=1477330254]
+libraries/ = SubResource("AnimationLibrary_f80oy")
+
 [node name="заяц1" type="CharacterBody2D" parent="." unique_id=1833277545]
 position = Vector2(2417.0002, 107)
 scale = Vector2(0.15758316, 0.08810889)
@@ -1571,58 +1623,53 @@ script = ExtResource("16_gi8li")
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1404407813]
 position = Vector2(1040, 1941)
 
-[node name="корова2" type="CharacterBody2D" parent="." unique_id=1125414095]
-position = Vector2(2471.9998, 304)
-scale = Vector2(0.15758316, 0.08810889)
-collision_layer = 4
-collision_mask = 3
-script = ExtResource("5_r84sp")
-type_of_animal = "cow"
+[node name="Coffee_tree" type="Node2D" parent="." unique_id=2040380842]
+y_sort_enabled = true
+script = ExtResource("16_c2oxf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="корова2" unique_id=574550514]
-position = Vector2(1.029686, 129.00772)
-scale = Vector2(1.0000006, 1)
-shape = SubResource("RectangleShape2D_kpxtb")
+[node name="Sprite2D" type="Sprite2D" parent="Coffee_tree" unique_id=320171690]
+position = Vector2(462, 568)
+texture = ExtResource("17_nkb8e")
+region_enabled = true
+region_rect = Rect2(81, 1, 50, 60)
 
-[node name="Sprite2D" type="Sprite2D" parent="корова2" unique_id=291054915]
-position = Vector2(-21.181015, -41.23591)
-scale = Vector2(3.5842607, 6.634146)
-texture = ExtResource("6_k1m2l")
+[node name="Sprite2D2" type="Sprite2D" parent="Coffee_tree" unique_id=896606903]
+position = Vector2(440.00003, 558)
+scale = Vector2(0.079999216, 0.12)
+texture = ExtResource("17_nkb8e")
+region_enabled = true
+region_rect = Rect2(11, 11, 50, 50)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="корова2" unique_id=749440136]
-position = Vector2(-88.84158, -124.845695)
+[node name="Sprite2D6" type="Sprite2D" parent="Coffee_tree" unique_id=1225314003]
+position = Vector2(482.00003, 560)
+scale = Vector2(0.079999216, 0.099999994)
+texture = ExtResource("17_nkb8e")
+region_enabled = true
+region_rect = Rect2(11, 11, 50, 50)
 
-[node name="Area2D" type="Area2D" parent="корова2" unique_id=1074168627]
-position = Vector2(0.0004043579, -0.00016784668)
-collision_layer = 4
-collision_mask = 97
+[node name="Sprite2D5" type="Sprite2D" parent="Coffee_tree" unique_id=942138875]
+position = Vector2(448.00003, 543)
+scale = Vector2(0.079999216, 0.099999994)
+texture = ExtResource("17_nkb8e")
+region_enabled = true
+region_rect = Rect2(11, 11, 50, 50)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="корова2/Area2D" unique_id=1056774600]
-position = Vector2(0.00038146973, -0.00019836426)
-scale = Vector2(1.0000005, 1)
-shape = SubResource("RectangleShape2D_pfiw4")
+[node name="Area2D" type="Area2D" parent="Coffee_tree" unique_id=111637094]
+position = Vector2(457, 576)
 
-[node name="HPLabelCow" type="Label" parent="корова2" unique_id=1610037831]
-anchors_preset = -1
-anchor_left = 0.039
-anchor_top = 0.083000004
-anchor_right = 0.039
-anchor_bottom = 0.083000004
-offset_left = -114.22502
-offset_top = -283.73993
-offset_right = -32.22502
-offset_bottom = -233.73991
-scale = Vector2(0.90624374, 1.4578785)
-theme_override_font_sizes/font_size = 30
-script = ExtResource("9_r84sp")
-metadata/_edit_use_anchors_ = true
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Coffee_tree/Area2D" unique_id=492326955]
+polygon = PackedVector2Array(0, 0, -3, 9, -35, 9, -35, 27, 33, 27, 33, 13, 6, 13, 3, 6, 2, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="корова2" unique_id=1477330254]
-libraries/ = SubResource("AnimationLibrary_f80oy")
+[node name="Label" type="Label" parent="Coffee_tree" unique_id=700408191]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Dropped_thing" parent="." unique_id=498434498 instance=ExtResource("18_ycarb")]
 
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Panel/Button123" to="." method="_on_button_123_pressed"]
 [connection signal="body_entered" from="корова/Area2D" to="корова" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="заяц1/Area2D" to="заяц1" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="корова2/Area2D" to="корова2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="заяц1/Area2D" to="заяц1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Coffee_tree/Area2D" to="Coffee_tree" method="_on_tree_2d_body_entered"]

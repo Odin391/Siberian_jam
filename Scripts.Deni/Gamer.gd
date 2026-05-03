@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 		GlobalInfo.in_action = false
 	
 	
-	if Input.is_action_pressed("Shift") and GlobalInfo.stamina_value != 0:
+	if Input.is_action_pressed("Shift") and GlobalInfo.stamina_value > 0:
 		GlobalInfo.in_shift = true
 		velocity *= 2
 	else:
