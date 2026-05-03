@@ -149,17 +149,18 @@ animations = [{
 bg_color = Color(0.92659914, 0.43943134, 0.1400955, 1)
 
 [node name="Gamer" type="CharacterBody2D" unique_id=2082965673]
+collision_mask = 65
 motion_mode = 1
 platform_wall_layers = 3
 script = ExtResource("1_vxk36")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067846680]
-position = Vector2(-2.9802322e-08, 13)
+position = Vector2(-0.35568237, 12.077091)
 scale = Vector2(1.1180485, 1.037469)
 shape = SubResource("RectangleShape2D_582am")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=947575753]
-position = Vector2(0, 2.842171e-14)
+position = Vector2(-0.35568237, -0.9229107)
 scale = Vector2(0.5673128, 0.4019273)
 sprite_frames = SubResource("SpriteFrames_f5tx5")
 animation = &"go_right"
@@ -167,8 +168,10 @@ frame_progress = 0.44343752
 script = ExtResource("3_3s3d0")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=131057594]
+position = Vector2(-0.35568237, 12.077091)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=331978738]
+position = Vector2(-0.35568237, 12.077091)
 zoom = Vector2(3.39, 3.39)
 
 [node name="HPLabel" type="Label" parent="." unique_id=463744274]
@@ -177,10 +180,10 @@ anchor_left = 0.039
 anchor_top = 0.083000004
 anchor_right = 0.039
 anchor_bottom = 0.083000004
-offset_left = -15.0
-offset_top = -25.000002
-offset_right = 67.0
-offset_bottom = 25.000006
+offset_left = -13.0
+offset_top = -39.0
+offset_right = 69.0
+offset_bottom = 11.000008
 scale = Vector2(0.18135321, 0.18776387)
 theme_override_font_sizes/font_size = 30
 script = ExtResource("4_halx8")
@@ -189,8 +192,10 @@ metadata/_edit_use_anchors_ = true
 [node name="InventoryUI" type="Control" parent="." unique_id=1675717551]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -22.0
+offset_top = -94.0
+offset_right = 18.0
+offset_bottom = -54.0
 script = ExtResource("5_224py")
 
 [node name="Panel" type="Panel" parent="InventoryUI" unique_id=713089553]

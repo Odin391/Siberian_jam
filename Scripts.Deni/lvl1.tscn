@@ -1403,7 +1403,7 @@ position = Vector2(-88.84158, -124.845695)
 [node name="Area2D" type="Area2D" parent="корова" unique_id=607452212]
 position = Vector2(0.0004043579, -0.00016784668)
 collision_layer = 16
-collision_mask = 32
+collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="корова/Area2D" unique_id=1873592497]
 position = Vector2(0.00038146973, -0.00019836426)
