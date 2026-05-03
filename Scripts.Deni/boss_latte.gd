@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var health = 30
-@export var attack_interval = 4.0
+@export var attack_interval = 2.0
 @export var attack_range = 300.0
 @export var coffee_shot_scene: PackedScene
 @export var laser_beam_scene: PackedScene   # сюда перетащить LaserBeam.tscn

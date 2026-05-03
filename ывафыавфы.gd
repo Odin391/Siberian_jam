@@ -1,7 +1,7 @@
 extends Area2D
 
 var direction = Vector2.RIGHT   # ← ОБЯЗАТЕЛЬНО объявить
-var speed = 150
+var speed = 200
 
 func _ready():
 	body_entered.connect(_on_body_entered)
