@@ -1,17 +1,19 @@
 [gd_scene format=4 uid="uid://bej3vd8hk8drm"]
 
-[ext_resource type="Script" uid="uid://rablhmqr65wd" path="res://Scripts.Deni/lvl_1.gd" id="1_b7jvp"]
+[ext_resource type="Script" uid="uid://f5xj81i7720d" path="res://Scripts.Deni/lvl_1.gd" id="1_b7jvp"]
 [ext_resource type="Texture2D" uid="uid://keakkn7clcxc" path="res://Art/LandSkape1.png" id="1_q2xui"]
 [ext_resource type="PackedScene" uid="uid://bw13kv48qxjgy" path="res://Scripts.Deni/gamer.tscn" id="2_sagh3"]
-[ext_resource type="Script" uid="uid://dpavv06basctv" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
-[ext_resource type="Script" uid="uid://b0cwn40j0smpm" path="res://Scripts.Deni/pause_menu.gd" id="3_f80oy"]
-[ext_resource type="Script" uid="uid://bak44ofgf72ao" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
-[ext_resource type="Script" uid="uid://btwjphru5m46" path="res://Scripts.Deni/корова.gd" id="5_r84sp"]
+[ext_resource type="Script" uid="uid://ye6muaq6xfpu" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
+[ext_resource type="Script" uid="uid://d4fdmfvlcm8xi" path="res://Scripts.Deni/pause_menu.gd" id="3_f80oy"]
+[ext_resource type="Script" uid="uid://bwv3w77csv5rj" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
+[ext_resource type="Script" uid="uid://cns7miixp5kd3" path="res://Scripts.Deni/корова.gd" id="5_r84sp"]
 [ext_resource type="Texture2D" uid="uid://byc1ai7m1e8hf" path="res://Art/корова.png" id="6_k1m2l"]
 [ext_resource type="Script" uid="uid://cnpli85qew3fd" path="res://Scripts.Danya/ui.gd" id="9_r84sp"]
 [ext_resource type="Texture2D" uid="uid://d25hijf6jpib7" path="res://Art/заяц.png" id="9_u2fmc"]
-[ext_resource type="Script" uid="uid://cbx6p2acxve6d" path="res://Scripts.Deni/заяц_1.gd" id="10_u2fmc"]
+[ext_resource type="Script" uid="uid://dv7lriheokf3q" path="res://Scripts.Deni/заяц_1.gd" id="10_u2fmc"]
 [ext_resource type="PackedScene" uid="uid://bfgb2qj5hvihh" path="res://area_2d_2.tscn" id="12_r84sp"]
+[ext_resource type="Script" uid="uid://cf1xfmqqjlu4f" path="res://Scripts.Deni/character_body_2d.gd" id="13_b7jvp"]
+[ext_resource type="Texture2D" uid="uid://wy60lv7wcpot" path="res://Art/Снимок экрана 2026-04-19 203610.png" id="14_stkd2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2xui"]
 texture = ExtResource("1_q2xui")
@@ -1247,7 +1249,10 @@ size = Vector2(63.458588, 34.04898)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2fmc"]
 size = Vector2(82.49611, 102.14636)
 
-[node name="Node2D" type="Node2D" unique_id=1098396671]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi8li"]
+size = Vector2(26.5, 17.25)
+
+[node name="Node2D2" type="Node2D" unique_id=1098396671]
 script = ExtResource("1_b7jvp")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=702380585]
@@ -1473,6 +1478,27 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(13, 38)
 collision_layer = 64
 collision_mask = 16
+
+[node name="Elder" type="CharacterBody2D" parent="." unique_id=756802093]
+position = Vector2(212, -25)
+collision_mask = 2
+script = ExtResource("13_b7jvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Elder" unique_id=1511528177]
+position = Vector2(208.99997, 228)
+scale = Vector2(0.39814815, 0.3490566)
+texture = ExtResource("14_stkd2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elder" unique_id=377943643]
+position = Vector2(210, 239)
+shape = SubResource("RectangleShape2D_gi8li")
+
+[node name="Label" type="Label" parent="Elder" unique_id=1233736478]
+offset_left = 191.0
+offset_top = 188.0
+offset_right = 230.0
+offset_bottom = 215.0
+theme_override_font_sizes/font_size = 8
 
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button2" to="." method="_on_button_2_pressed"]
