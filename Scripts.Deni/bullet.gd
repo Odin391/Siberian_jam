@@ -1,4 +1,6 @@
 extends RigidBody2D
+class_name Bullet
+
 
 var in_action = false
 var damage = 10
@@ -18,7 +20,6 @@ func _physics_process(delta: float) -> void:
 var smaller = false
 # по таймеру времени полета уменьшаем урон и scale (размер)
 func _on_timer_timeout() -> void:
-
 	damage -= 2
 	if scale >= Vector2(0, 0) and smaller == false:
 		var tween = create_tween()

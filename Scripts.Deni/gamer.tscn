@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://8i85mquvmu7a" path="res://Scripts.Deni/Gamer.gd" id="1_vxk36"]
 [ext_resource type="Texture2D" uid="uid://dcx4d6o8o2jyy" path="res://animations/Gamer.png" id="2_vxk36"]
 [ext_resource type="Script" uid="uid://bmrkgvneiylk0" path="res://Scripts.Deni/Player_anim.gd" id="3_3s3d0"]
-[ext_resource type="Script" uid="uid://cnpli85qew3fd" path="res://Scripts.Danya/ui.gd" id="4_halx8"]
+[ext_resource type="Script" uid="uid://30wah3nb5dta" path="res://Scripts.Deni/hp_label_player.gd" id="4_halx8"]
+[ext_resource type="Script" uid="uid://bt6mitx43i04d" path="res://control.gd" id="5_224py"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_582am"]
 size = Vector2(8.944155, 5.7833056)
@@ -144,6 +145,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_840wy"]
+bg_color = Color(0.92659914, 0.43943134, 0.1400955, 1)
+
 [node name="Gamer" type="CharacterBody2D" unique_id=2082965673]
 motion_mode = 1
 platform_wall_layers = 3
@@ -181,3 +185,30 @@ scale = Vector2(0.18135321, 0.18776387)
 theme_override_font_sizes/font_size = 30
 script = ExtResource("4_halx8")
 metadata/_edit_use_anchors_ = true
+
+[node name="InventoryUI" type="Control" parent="." unique_id=1675717551]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_224py")
+
+[node name="Panel" type="Panel" parent="InventoryUI" unique_id=713089553]
+layout_mode = 0
+offset_left = -103.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_840wy")
+
+[node name="ItemList" type="ItemList" parent="InventoryUI/Panel" unique_id=2070118337]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 92.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 10
+allow_reselect = true
+allow_rmb_select = true
+auto_width = true
+auto_height = true

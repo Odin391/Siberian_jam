@@ -10,10 +10,15 @@ var mana_value = 100
 ##
 
 
+#Mobs
+
+
+##
 
 
 # player
-var health = 10
+var Gamer_health = 10
+var max_gamer_health = 10
 var in_action = false
 var in_shift = false
 ##

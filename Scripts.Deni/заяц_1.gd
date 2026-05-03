@@ -15,7 +15,7 @@ extends CharacterBody2D
 var target_position: Vector2
 var is_waiting: bool = false
 var audio_player: AudioStreamPlayer2D
-var moo_sound = preload("res://Art/the-wounded-hare-screams (online-audio-converter.com).mp3")
+var rabbit_sound = preload("res://Art/the-wounded-hare-screams (online-audio-converter.com).mp3")
 
 var last_index: int = -1
 
@@ -25,7 +25,7 @@ func _ready():
 		return
 	
 	audio_player = AudioStreamPlayer2D.new()
-	audio_player.stream = moo_sound
+	audio_player.stream = rabbit_sound
 	audio_player.max_distance = 150.0
 	audio_player.attenuation = 1.5
 	
