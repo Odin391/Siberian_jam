@@ -1,5 +1,17 @@
 [gd_scene format=3 uid="uid://c8cg3mtcimhcj"]
 
+[ext_resource type="Script" uid="uid://6px7ck54q4n8" path="res://Scripts.Deni/dropped_thing.gd" id="1_5rvnm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtntp"]
+
 [node name="Dropped_thing" type="Node2D" unique_id=498434498]
+script = ExtResource("1_5rvnm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1005675944]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1129991072]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1004348067]
+shape = SubResource("RectangleShape2D_gtntp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
