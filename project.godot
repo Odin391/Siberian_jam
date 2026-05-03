@@ -70,6 +70,7 @@ inventory={
 
 [layer_names]
 
+2d_physics/layer_1="gamer"
 2d_physics/layer_5="Gamers_area"
 2d_physics/layer_7="Drop_predmets"
 

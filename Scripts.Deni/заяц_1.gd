@@ -4,13 +4,15 @@ extends CharacterBody2D
 @export var tile_size: Vector2 = Vector2(38, 38)
 @export var pause_seconds: float = 4.0
 
-@export var waypoints_tile: Array[Vector2] = [
-	Vector2(14, 6),
-	Vector2(14, 10),
-	Vector2(14, 1),
-	Vector2(4, 4),
-	Vector2(4, 10)
-]
+
+
+
+@onready var waypoints_tile: Array[Vector2] = [
+Vector2(randi_range(GlobalInfo.min_for_cow_x, GlobalInfo.max_for_cow_x), randi_range(GlobalInfo.min_for_cow_y, GlobalInfo.max_for_cow_y)),
+Vector2(randi_range(GlobalInfo.min_for_cow_x, GlobalInfo.max_for_cow_x), randi_range(GlobalInfo.min_for_cow_y, GlobalInfo.max_for_cow_y)),
+Vector2(randi_range(GlobalInfo.min_for_cow_x, GlobalInfo.max_for_cow_x), randi_range(GlobalInfo.min_for_cow_y, GlobalInfo.max_for_cow_y)),
+Vector2(randi_range(GlobalInfo.min_for_cow_x, GlobalInfo.max_for_cow_x), randi_range(GlobalInfo.min_for_cow_y, GlobalInfo.max_for_cow_y)),
+Vector2(randi_range(GlobalInfo.min_for_cow_x, GlobalInfo.max_for_cow_x), randi_range(GlobalInfo.min_for_cow_y, GlobalInfo.max_for_cow_y))]
 
 var target_position: Vector2
 var is_waiting: bool = false
@@ -20,9 +22,13 @@ var rabbit_sound = preload("res://Art/the-wounded-hare-screams (online-audio-con
 var last_index: int = -1
 
 func _ready():
+
 	if waypoints_tile.is_empty():
 		print("Нет точек!")
 		return
+	
+	
+	
 	
 	audio_player = AudioStreamPlayer2D.new()
 	audio_player.stream = rabbit_sound
@@ -42,6 +48,7 @@ func _on_audio_finished():
 	audio_player.play()   # перезапускаем, если не зациклено
 
 func _physics_process(delta):
+	
 	if waypoints_tile.is_empty() or is_waiting:
 		return
 	

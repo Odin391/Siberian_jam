@@ -173,6 +173,8 @@ position = Vector2(-0.35568237, 12.077091)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=331978738]
 position = Vector2(-0.35568237, 12.077091)
 zoom = Vector2(3.39, 3.39)
+limit_left = 0
+limit_top = 0
 
 [node name="HPLabel" type="Label" parent="." unique_id=463744274]
 anchors_preset = -1
@@ -193,9 +195,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 3
 anchors_preset = 0
 offset_left = -22.0
-offset_top = -94.0
+offset_top = -55.0
 offset_right = 18.0
-offset_bottom = -54.0
+offset_bottom = -15.0
 script = ExtResource("5_224py")
 
 [node name="Panel" type="Panel" parent="InventoryUI" unique_id=713089553]

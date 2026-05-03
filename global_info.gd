@@ -10,9 +10,16 @@ var mana_value = 100
 ##
 
 
+
+
 #Mobs
+var min_for_rabbit
+var max_for_rabbit
 
-
+var min_for_cow_x = 1916
+var max_for_cow_x = 2563
+var min_for_cow_y = 123
+var max_for_cow_y = 921
 ##
 
 
