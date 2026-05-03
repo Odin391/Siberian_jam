@@ -77,7 +77,10 @@ interact={
 [layer_names]
 
 2d_physics/layer_1="gamer"
+2d_physics/layer_2="Holm, ground"
+2d_physics/layer_3="Animal"
 2d_physics/layer_5="Gamers_area"
+2d_physics/layer_6="Bullet"
 2d_physics/layer_7="Drop_predmets"
 
 [physics]
