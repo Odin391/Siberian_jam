@@ -1,16 +1,17 @@
 [gd_scene format=4 uid="uid://bej3vd8hk8drm"]
 
-[ext_resource type="Script" uid="uid://f5xj81i7720d" path="res://Scripts.Deni/lvl_1.gd" id="1_b7jvp"]
+[ext_resource type="Script" uid="uid://rablhmqr65wd" path="res://Scripts.Deni/lvl_1.gd" id="1_b7jvp"]
 [ext_resource type="Texture2D" uid="uid://keakkn7clcxc" path="res://Art/LandSkape1.png" id="1_q2xui"]
 [ext_resource type="PackedScene" uid="uid://bw13kv48qxjgy" path="res://Scripts.Deni/gamer.tscn" id="2_sagh3"]
-[ext_resource type="Script" uid="uid://ye6muaq6xfpu" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
-[ext_resource type="Script" uid="uid://d4fdmfvlcm8xi" path="res://Scripts.Deni/pause_menu.gd" id="3_f80oy"]
-[ext_resource type="Script" uid="uid://bwv3w77csv5rj" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
-[ext_resource type="Script" uid="uid://cns7miixp5kd3" path="res://Scripts.Deni/корова.gd" id="5_r84sp"]
+[ext_resource type="Script" uid="uid://dpavv06basctv" path="res://Scripts.Deni/mana.gd" id="3_3wsip"]
+[ext_resource type="Script" uid="uid://b0cwn40j0smpm" path="res://Scripts.Deni/pause_menu.gd" id="3_f80oy"]
+[ext_resource type="Script" uid="uid://bak44ofgf72ao" path="res://Scripts.Deni/Stamina.gd" id="3_va0yt"]
+[ext_resource type="Script" uid="uid://btwjphru5m46" path="res://Scripts.Deni/корова.gd" id="5_r84sp"]
 [ext_resource type="Texture2D" uid="uid://byc1ai7m1e8hf" path="res://Art/корова.png" id="6_k1m2l"]
 [ext_resource type="Script" uid="uid://cnpli85qew3fd" path="res://Scripts.Danya/ui.gd" id="9_r84sp"]
 [ext_resource type="Texture2D" uid="uid://d25hijf6jpib7" path="res://Art/заяц.png" id="9_u2fmc"]
-[ext_resource type="Script" uid="uid://dv7lriheokf3q" path="res://Scripts.Deni/заяц_1.gd" id="10_u2fmc"]
+[ext_resource type="Script" uid="uid://cbx6p2acxve6d" path="res://Scripts.Deni/заяц_1.gd" id="10_u2fmc"]
+[ext_resource type="PackedScene" uid="uid://bfgb2qj5hvihh" path="res://area_2d_2.tscn" id="12_r84sp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2xui"]
 texture = ExtResource("1_q2xui")
@@ -1180,6 +1181,66 @@ size = Vector2(133.26291, 45.39835)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfiw4"]
 size = Vector2(145.95462, 283.7395)
 
+[sub_resource type="Animation" id="Animation_u2fmc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15758316, 0.08810889)]
+}
+
+[sub_resource type="Animation" id="Animation_r84sp"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.15758316, 0.08810889), Vector2(0.043, 0.024)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f80oy"]
+_data = {
+&"RESET": SubResource("Animation_u2fmc"),
+&"death": SubResource("Animation_r84sp")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7jvp"]
 size = Vector2(63.458588, 34.04898)
 
@@ -1200,7 +1261,7 @@ tile_set = SubResource("TileSet_t5y7p")
 [node name="Trees" type="TileMapLayer" parent="." unique_id=1251521498]
 tile_set = SubResource("TileSet_582am")
 
-[node name="Gamer" parent="." unique_id=2082965673 instance=ExtResource("2_sagh3")]
+[node name="Gamer" parent="." unique_id=2082965673 groups=["Gamer"] instance=ExtResource("2_sagh3")]
 position = Vector2(49, 127)
 collision_mask = 2
 
@@ -1327,22 +1388,25 @@ collision_mask = 3
 script = ExtResource("5_r84sp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="корова" unique_id=153558322]
-position = Vector2(121.600945, 197.10527)
+position = Vector2(1.029686, 129.00772)
 scale = Vector2(1.0000006, 1)
 shape = SubResource("RectangleShape2D_kpxtb")
 
 [node name="Sprite2D" type="Sprite2D" parent="корова" unique_id=1710271238]
-position = Vector2(99.390236, 26.86164)
+position = Vector2(-21.181015, -41.23591)
 scale = Vector2(3.5842607, 6.634146)
 texture = ExtResource("6_k1m2l")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="корова" unique_id=2053127719]
-position = Vector2(-2.1436243, 4.1624064)
+position = Vector2(-88.84158, -124.845695)
 
 [node name="Area2D" type="Area2D" parent="корова" unique_id=607452212]
+position = Vector2(0.0004043579, -0.00016784668)
+collision_layer = 16
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="корова/Area2D" unique_id=1873592497]
-position = Vector2(123.74457, 73.77197)
+position = Vector2(0.00038146973, -0.00019836426)
 scale = Vector2(1.0000005, 1)
 shape = SubResource("RectangleShape2D_pfiw4")
 
@@ -1352,14 +1416,17 @@ anchor_left = 0.039
 anchor_top = 0.083000004
 anchor_right = 0.039
 anchor_bottom = 0.083000004
-offset_left = 6.3462486
-offset_top = -215.64236
-offset_right = 88.34625
-offset_bottom = -165.64235
+offset_left = -114.22502
+offset_top = -283.73993
+offset_right = -32.22502
+offset_bottom = -233.73991
 scale = Vector2(0.90624374, 1.4578785)
 theme_override_font_sizes/font_size = 30
 script = ExtResource("9_r84sp")
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="корова" unique_id=1378899695]
+libraries/ = SubResource("AnimationLibrary_f80oy")
 
 [node name="заяц1" type="CharacterBody2D" parent="." unique_id=1833277545]
 position = Vector2(265.99994, -84)
@@ -1401,6 +1468,11 @@ scale = Vector2(0.906, 1.729)
 theme_override_font_sizes/font_size = 30
 script = ExtResource("9_r84sp")
 metadata/_edit_use_anchors_ = true
+
+[node name="Area2D2" parent="." unique_id=1712433626 instance=ExtResource("12_r84sp")]
+position = Vector2(13, 38)
+collision_layer = 64
+collision_mask = 16
 
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Gamer/PauseMenu/Panel/Button2" to="." method="_on_button_2_pressed"]
