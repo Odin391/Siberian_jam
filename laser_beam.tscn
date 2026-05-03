@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://l8eqayjiunf4"]
+[gd_scene format=3 uid="uid://bfqmt23cd60ke"]
 
-[ext_resource type="PackedScene" uid="uid://bcrdtkc86x2my" path="res://laser1111111111111_beam.tscn" id="1_t1d0h"]
+[ext_resource type="PackedScene" uid="uid://cfno8litqfj5w" path="res://laser1111111111111_beam.tscn" id="1_t1d0h"]
 
 [node name="LaserBeam" type="Node2D" unique_id=2089620162]
 rotation = -1.5722742

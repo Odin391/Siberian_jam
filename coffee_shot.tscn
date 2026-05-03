@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bd4hhimkdo315"]
+[gd_scene format=3 uid="uid://wjb04gx6e0xi"]
 
-[ext_resource type="PackedScene" uid="uid://dlaxpsrcxm0hf" path="res://ывафыавфы.tscn" id="1_6swah"]
+[ext_resource type="PackedScene" path="res://ывафыавфы.tscn" id="1_6swah"]
 
 [node name="CoffeeShot" type="Node2D" unique_id=2049177602]
 

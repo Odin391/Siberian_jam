@@ -1,12 +1,12 @@
-[gd_scene format=4 uid="uid://rsveb3mettn5"]
+[gd_scene format=4 uid="uid://c4lqpg0hvgc2i"]
 
 [ext_resource type="Texture2D" uid="uid://dyy830o3qpiei" path="res://animations/plain-smooth-green-wall-texture_53876-129746.png" id="1_7kcvw"]
-[ext_resource type="Script" uid="uid://f5mh0x2y58qb" path="res://Scripts.Danya/menu.gd" id="1_hskq2"]
+[ext_resource type="Script" uid="uid://cgmkpam0af0sc" path="res://Scripts.Danya/menu.gd" id="1_hskq2"]
 [ext_resource type="Texture2D" uid="uid://dqi5a8hdfv7t6" path="res://animations/фон кнопок.png" id="2_hjsc0"]
 [ext_resource type="Texture2D" uid="uid://dq4ns4j8qcd5b" path="res://animations/wooden-gold-buttons-ui-game_107791-5095-edited-free (carve.photos).png" id="3_2prhh"]
 [ext_resource type="Texture2D" uid="uid://druq4o56v8hel" path="res://animations/wooden-gold-buttons-ui-game_107791-5095-edited-free (carve.photos) (1).png" id="5_gf76u"]
 [ext_resource type="Texture2D" uid="uid://dod4q3384usu6" path="res://animations/wooden-gold-buttons-ui-game_107791-5095-edited-free (carve.photos) (2).png" id="6_gbulr"]
-[ext_resource type="Script" uid="uid://c0ited7lw6pjo" path="res://Scripts.Danya/audio_control.gd" id="7_6tipb"]
+[ext_resource type="Script" uid="uid://d325raa16w42m" path="res://Scripts.Danya/audio_control.gd" id="7_6tipb"]
 [ext_resource type="Texture2D" uid="uid://be1xhis6fteni" path="res://animations/wooden-gold-buttons-ui-game_107791-5095-edited-free (carve.photos) (3).png" id="8_gbulr"]
 [ext_resource type="Texture2D" uid="uid://ba34qmpmrin8q" path="res://animations/wooden-gold-buttons-ui-game_107791-5095-edited-free (carve.photos) (4).png" id="10_6tipb"]
 
